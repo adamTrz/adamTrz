@@ -1,0 +1,23 @@
+
+<section id="contact" ng-show="main.sectionSelected(3)" class="container">
+  <article ng-controller="contactCtrl as contact">
+    <header>Lets talk smack</header>
+    <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" class="row">
+      <div class="form-previev six columns">
+        <blockquote class="row">
+          <div class="preview-sender twelve columns"><i>From:  </i><span>{%raw%} {{ contact.mail.sender || 'Name, Surname' }} {%endraw%}</span></div>
+          <div class="preview-subject eight columns pull-right"><i>@ </i><span>{%raw%}{{ contact.mail.email || 'mail@mail.com' }}{%endraw%}</span></div>
+          <div class="preview-txt twelve columns"><i>Message:</i>
+            <q>{%raw%}{{ contact.mail.message || 'Your msg...' }}{%endraw%}</q>
+          </div>
+        </blockquote>
+      </div>
+      <div class="six columns">
+        <input type="text" placeholder="Name, Surname" ng-model="contact.mail.sender" data-ng-pattern="/^[a-zA-Z ]*$/" name="sender" required="required" id="emailSender" class="u-full-width"/><span ng-show="contactForm.sender.$invalid  &amp;&amp; !contactForm.sender.$pristine" class="error u-full-width">No digits or special characters allowed.</span>
+        <input type="email" maxlength="40" placeholder="mail@mail.com" ng-model="contact.mail.email" name="email" required="required" id="emailInput" class="u-full-width"/><span ng-show="contactForm.email.$invalid  &amp;&amp; !contactForm.email.$pristine" class="error">Please enter valid email.</span>
+        <textarea rows="3" ng-minlength="10" ng-maxlength="300" placeholder="State your business here" ng-model="contact.mail.message" name="msg" required="required" id="emailText" class="u-full-width"></textarea><span ng-show="contactForm.msg.$error.maxlength &amp;&amp; !contactForm.msg.$pristine" class="error">Your message is too long.</span><span ng-show="contactForm.msg.$error.minlength &amp;&amp; !contactForm.msg.$pristine" class="error">Your message is too short.</span>
+        <button type="submit" ng-disabled="contactForm.$invalid" class="u-pull-right">Send</button>
+      </div>
+    </form>
+  </article>
+</section>

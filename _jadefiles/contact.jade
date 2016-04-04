@@ -1,0 +1,24 @@
+section#contact(ng-show='main.sectionSelected(3)').container
+  article(ng-controller='contactCtrl as contact')
+    header Lets talk smack
+    form(name='contactForm' ng-submit='contactForm.$valid &&  contact.formSubmit(contact.mail, contactForm)' novalidate, autocomplete="off").row
+      .form-previev.six.columns
+        blockquote.row
+          .preview-sender.twelve.columns
+            i From:  
+            span {%raw%} {{ contact.mail.sender || 'Name, Surname' }} {%endraw%}
+          .preview-subject.eight.columns.pull-right
+            i @ 
+            span {%raw%}{{ contact.mail.email || 'mail@mail.com' }}{%endraw%}
+          .preview-txt.twelve.columns
+            i Message:
+            q {%raw%}{{ contact.mail.message || 'Your msg...' }}{%endraw%}
+      .six.columns
+        input.u-full-width(type="text", placeholder="Name, Surname", ng-model='contact.mail.sender', data-ng-pattern="/^[a-zA-Z ]*$/", name = 'sender', required)#emailSender
+        span.error.u-full-width(ng-show="contactForm.sender.$invalid  && !contactForm.sender.$pristine") No digits or special characters allowed.
+        input.u-full-width(type="email",  maxlength='40', placeholder="mail@mail.com", ng-model='contact.mail.email',name='email' required)#emailInput
+        span.error(ng-show="contactForm.email.$invalid  && !contactForm.email.$pristine") Please enter valid email.
+        textarea(rows='3',  ng-minlength='10', ng-maxlength='300', placeholder="State your business here" ng-model='contact.mail.message',name='msg' required)#emailText.u-full-width
+        span.error(ng-show="contactForm.msg.$error.maxlength && !contactForm.msg.$pristine") Your message is too long.
+        span.error(ng-show="contactForm.msg.$error.minlength && !contactForm.msg.$pristine") Your message is too short.
+        button(type='submit' ng-disabled='contactForm.$invalid').u-pull-right Send

@@ -1,0 +1,113 @@
+nav
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  text-align: center
+  padding-top: 10px
+  padding-bottom: 10px
+  margin-bottom: 30px
+  #logo
+    font-family: 'Montserrat', sans-serif
+    span
+      font-weight: 700
+  a
+    transform: translateX(2000px)
+    text-transform: uppercase
+    text-decoration: none
+    color: $text-color
+    overflow: hidden
+    min-width: 200px
+    opacity: 0
+    transition: all 1s ease
+    &:before, &:after
+      content: ' / '
+      display: inline-block
+      opacity: 0
+      transform: translateX(0px)
+      transition: transform 0.5s cubic-bezier(0.7,-0.89, 0.32, 1.89)
+    &:before
+      margin-right: 0
+    &:after
+      margin-left: 0
+    &:hover
+      text-decoration: none
+      color: $text-color
+      opacity: 1
+      &:before, &:after
+        opacity: 1
+      &:before
+        transform: translateX(-20px)
+      &:after
+        transform: translateX(20px)
+    &.active
+      opacity: 1
+      text-decoration: none
+      color: $text-color
+      &:before, &:after
+        opacity: 1
+      &:before
+        transform: translateX(-20px)
+      &:after
+        transform: translateX(20px)
+  .sub-nav
+    cursor: pointer
+    width: 40px
+    transition: all .3s cubic-bezier(0.85, 0, 1, 0.1)
+    #hamburger
+      content: ''
+      width: 33px
+      height: 3px
+      background-color: $text-color
+      margin-top: 14px
+      position: relative
+      opacity: 0.75
+      animation-name: navJinx
+      animation-duration: 20s
+      animation-iteration-count: infinite
+      &:before, &:after
+        position: absolute
+        left: 3px
+        content: ''
+        display: inline-block
+        width: 25px
+        height: 3px
+        background-color: $text-color
+      &:before
+        top: -8px
+        transform-origin: top left
+      &:after
+        top: 8px
+        transform-origin: bottom left
+
+  // NAV HOVER
+  .sub-nav:hover
+    #hamburger
+      opacity: 1
+  .sub-nav
+    #hamburger
+      &.active
+        height: 0
+        &:before
+          transform: rotate(45deg)
+        &:after
+          transform: rotate(-45deg)
+nav.slideAnchors
+  a
+    opacity: 0.75
+    transform: translateX(50px)
+    &:hover, &.active
+      opacity: 1
+  .sub-nav
+    #hamburger
+      opacity: 1
+      animation-iteration-count: 0
+
++keyframes(navJinx)
+  0%
+    transform: scaleX(1)
+  2%
+    transform: scaleX(1.4)
+  4%
+    transform: scaleX(1)
+  100%
+    transform: scaleX(1)
