@@ -1,9 +1,9 @@
 section#portfolio(ng-show='main.sectionSelected(1)').container
   article(ng-controller='portfolioCtrl as portfolio')
     .row
-      .item(ng-repeat='image in portfolio.gallery', ng-class='image.size')
+      .item(ng-repeat='image in portfolio.gallery', ng-class='image.size').columns
         .img-wrapper
-          img(ng-src='{%raw%}{{image.url}}{%endraw%}')
+          img(ng-src='{%raw%}{{image.url}}{%endraw%}').u-max-full-width
         span {%raw%}{{image.blob}}{%endraw%}
         .links
           a(href='{%raw%}{{image.gitLink}}{%endraw%}', title='Wiev code repo on github.' target='_blank')

@@ -2,8 +2,8 @@
 <section id="portfolio" ng-show="main.sectionSelected(1)" class="container">
   <article ng-controller="portfolioCtrl as portfolio">
     <div class="row">
-      <div ng-repeat="image in portfolio.gallery" ng-class="image.size" class="item">
-        <div class="img-wrapper"><img ng-src="{%raw%}{{image.url}}{%endraw%}"/></div><span>{%raw%}{{image.blob}}{%endraw%}</span>
+      <div ng-repeat="image in portfolio.gallery" ng-class="image.size" class="item columns">
+        <div class="img-wrapper"><img ng-src="{%raw%}{{image.url}}{%endraw%}" class="u-max-full-width"/></div><span>{%raw%}{{image.blob}}{%endraw%}</span>
         <div class="links"><a href="{%raw%}{{image.gitLink}}{%endraw%}" title="Wiev code repo on github." target="_blank"><i class="fa fa-github-square"></i></a><a href="{%raw%}{{image.wwwLink}}{%endraw%}" title="Watch online." target="_blank"><i class="fa fa-globe"></i></a></div>
       </div>
     </div>

@@ -12,12 +12,22 @@
           </div>
         </blockquote>
       </div>
-      <div class="six columns">
-        <input type="text" placeholder="Name, Surname" ng-model="contact.mail.sender" data-ng-pattern="/^[a-zA-Z ]*$/" name="sender" required="required" id="emailSender" class="u-full-width"/><span ng-show="contactForm.sender.$invalid  &amp;&amp; !contactForm.sender.$pristine" class="error u-full-width">No digits or special characters allowed.</span>
-        <input type="email" maxlength="40" placeholder="mail@mail.com" ng-model="contact.mail.email" name="email" required="required" id="emailInput" class="u-full-width"/><span ng-show="contactForm.email.$invalid  &amp;&amp; !contactForm.email.$pristine" class="error">Please enter valid email.</span>
-        <textarea rows="3" ng-minlength="10" ng-maxlength="300" placeholder="State your business here" ng-model="contact.mail.message" name="msg" required="required" id="emailText" class="u-full-width"></textarea><span ng-show="contactForm.msg.$error.maxlength &amp;&amp; !contactForm.msg.$pristine" class="error">Your message is too long.</span><span ng-show="contactForm.msg.$error.minlength &amp;&amp; !contactForm.msg.$pristine" class="error">Your message is too short.</span>
+      <div class="six columns form">
+        <div class="input-group">
+          <input type="text" ng-model="contact.mail.sender" data-ng-pattern="/^[a-zA-Z ]*$/" name="sender" required="required" id="emailSender" class="u-full-width"/>
+          <label>Name, Surname:</label><span ng-show="contactForm.sender.$invalid  &amp;&amp; !contactForm.sender.$pristine" class="error u-full-width">No digits or special characters allowed.</span>
+        </div>
+        <div class="input-group"> 
+          <input type="email" ng-model="contact.mail.email" name="email" required="required" id="emailInput" class="u-full-width"/><span ng-show="contactForm.email.$invalid  &amp;&amp; !contactForm.email.$pristine" class="error u-full-width">Please enter valid email.</span>
+          <label>Email:</label>
+        </div>
+        <div class="input-group"> 
+          <textarea rows="6" ng-minlength="10" ng-maxlength="400" ng-model="contact.mail.message" name="msg" required="required" id="emailText" class="u-full-width"></textarea>
+          <label>Your message:</label><span ng-show="contactForm.msg.$error.maxlength &amp;&amp; !contactForm.msg.$pristine" class="error u-full-width">Your message is too long.</span><span ng-show="contactForm.msg.$error.minlength &amp;&amp; !contactForm.msg.$pristine" class="error u-full-width">Your message is too short.</span>
+        </div>
         <button type="submit" ng-disabled="contactForm.$invalid" class="u-pull-right">Send</button>
       </div>
     </form>
+    <aside><span ng-repeat="social in contact.socials"><a title="{%raw%}{{social.title}}{%endraw%}" ng-href="{%raw%}{{social.url}}{%endraw%}" target="_blank"><i ng-class="social.icon" class="fa fa-2x fa-fw"></i></a></span></aside>
   </article>
 </section>

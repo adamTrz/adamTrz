@@ -1,4 +1,6 @@
 nav
+  box-shadow: 2px 2px 10px $accent-color
+  background-color: $brand-color
   display: flex
   flex-flow: row wrap
   justify-content: space-around
@@ -6,19 +8,28 @@ nav
   padding-top: 10px
   padding-bottom: 10px
   margin-bottom: 30px
+  transition: all .5s ease
+  transition-delay: 0 .5s
+  overflow-x: hidden
   #logo
+    color: $secondary-color
     font-family: 'Montserrat', sans-serif
+    text-shadow: 2px 2px 4px $text-color
+    cursor: pointer
     span
       font-weight: 700
+    &:hover
+      text-shadow: 4px 4px 4px $text-color
   a
+    color: $secondary-color
     transform: translateX(2000px)
     text-transform: uppercase
     text-decoration: none
-    color: $text-color
     overflow: hidden
     min-width: 200px
-    opacity: 0
-    transition: all 1s ease
+    opacity: 0.75
+    transition: all .3s ease
+    transition: transform 1s ease
     &:before, &:after
       content: ' / '
       display: inline-block
@@ -30,8 +41,6 @@ nav
     &:after
       margin-left: 0
     &:hover
-      text-decoration: none
-      color: $text-color
       opacity: 1
       &:before, &:after
         opacity: 1
@@ -42,7 +51,6 @@ nav
     &.active
       opacity: 1
       text-decoration: none
-      color: $text-color
       &:before, &:after
         opacity: 1
       &:before
@@ -52,18 +60,18 @@ nav
   .sub-nav
     cursor: pointer
     width: 40px
-    transition: all .3s cubic-bezier(0.85, 0, 1, 0.1)
     #hamburger
       content: ''
       width: 33px
       height: 3px
-      background-color: $text-color
-      margin-top: 14px
       position: relative
-      opacity: 0.75
+      margin-top: 14px
+      background-color: $secondary_color
+      box-shadow: 2px 2px 2px $text-color
       animation-name: navJinx
       animation-duration: 20s
       animation-iteration-count: infinite
+      transition: all .3s ease
       &:before, &:after
         position: absolute
         left: 3px
@@ -71,7 +79,9 @@ nav
         display: inline-block
         width: 25px
         height: 3px
-        background-color: $text-color
+        background-color: $secondary_color
+        box-shadow: 2px 2px 2px $text-color
+        transition: all .3s ease
       &:before
         top: -8px
         transform-origin: top left
@@ -82,24 +92,33 @@ nav
   // NAV HOVER
   .sub-nav:hover
     #hamburger
-      opacity: 1
+      background-color: $primary-color
+      box-shadow: 4px 4px 4px $text-color
+      &:before, &:after
+        background-color: $primary-color
+        box-shadow: 4px 4px 4px $text-color
+      &.active
+        &:before
+          box-shadow: 4px 2px 2px $text-color
+        &:after
+          box-shadow: -2px 4px 2px $text-color
   .sub-nav
     #hamburger
       &.active
         height: 0
         &:before
           transform: rotate(45deg)
+          box-shadow: 2px 0px 2px $text-color
         &:after
           transform: rotate(-45deg)
+          box-shadow: 0px 2px 2px $text-color
+
 nav.slideAnchors
   a
-    opacity: 0.75
+    color: $secondary-color
     transform: translateX(50px)
-    &:hover, &.active
-      opacity: 1
   .sub-nav
     #hamburger
-      opacity: 1
       animation-iteration-count: 0
 
 +keyframes(navJinx)
