@@ -47,11 +47,11 @@ gulp.task('sass', function () {
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        // .pipe(minifyCss({compatibility: 'ie8'}))
       	.pipe(rename({suffix: ".min"}))
-        .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest('_site/assets/css'))
+        .pipe(gulp.dest('assets/css'))
         .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('assets/css'));
 });
 
 // Compile jade files
@@ -86,14 +86,6 @@ gulp.task('compress', function() {
     }))
     .pipe(gulp.dest('assets/js'));
 });
-
-// // Minify CSS
-// gulp.task('minify-css', function() {
-//   return gulp.src('assets/css/main.css')
-//   	.pipe(rename({suffix: ".min"}))
-//     .pipe(minifyCss({compatibility: 'ie8'}))
-//     .pipe(gulp.dest('assets/css'));
-// });
 
 
 // Watch scss files for changes & recompile
