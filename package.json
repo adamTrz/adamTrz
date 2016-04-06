@@ -1,7 +1,7 @@
 {
   "name": "",
   "version": "0.0.0",
-  "description": "GulpJS + Jekyll + SASS + Babel ES6 + jsHint & BrowserSync",
+  "description": "",
   "main": "gulpfile.js",
   "devDependencies": {
     "babel-cli": "^6.6.5",

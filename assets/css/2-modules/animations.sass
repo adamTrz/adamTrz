@@ -1,0 +1,18 @@
+article
+	overflow-y: hidden
+	.slideInUp
+		visibility: hidden
+		opacity: 0
+		transform: translate3d(0,50px,0)
+		transition: all .7s cubic-bezier(.17, .67, .83, .67)
+	&.is-active
+		.slideInUp
+			visibility: visible
+			opacity: 1
+			transform: translate3d(0,0,0)
+		.slideInUp.slideInUp2
+			transition-delay: .3s
+		.slideInUp.slideInUp3
+			transition-delay: .5s
+		.slideInUp.slideInUp4
+			transition-delay: .7s

@@ -5,7 +5,7 @@ section#portfolio
       display: flex
       flex-flow: column nowrap
       justify-content: space-around
-      padding-top: 50px
+      padding-top: 100px
       header
         text-align: center
         font-size: 2em
@@ -30,23 +30,52 @@ section#portfolio
 
       .img-wrapper
         background-color: white
-        box-shadow: 2px 2px 4px $accent-color
         max-height: 50%
         height: 50%
         margin: 0 1%
         // padding: 8px
         overflow: hidden
-        transition: all .3s ease
+        box-shadow: 2px 2px 4px $accent-color
         position: relative
         &:hover
-          box-shadow: 4px 4px 6px $accent-color
+          transition-delay: 0s
+          &:after
+            opacity: 0
+        &:after
+          content: ''
+          +position(absolute, 0 0)
+          // +background-image(linear-gradient(rgba(0,0,0,.5) 0, rgba(0,0,0,.1) 50%, rgba(0,0,0,0) 75%, transparent 50%))
+          background-color: transparentize($brand-color, 0.8)
+          opacity: 1
+          transition: all .5s ease
         img
           display: block
           position: absolute
           top: 50%
           left: 50%
           transform: translate(-50%,-50%)
-      aside
+
+        aside
+          +position(absolute, null 5% 5% null)
+          text-align: right
+          z-index: 100
+          opacity: 0
+          transition: all .3s ease
+          a
+            padding: 5px 10px
+            color: $brand-color
+            i.fa
+              font-size: 1.2em
+              text-shadow: 2px 2px 2px $accent-color
+              transition: all .3s ease
+              &:hover
+                text-shadow: 4px 4px 6px $accent-color
+            .fa-github-square
+            .fa-globe
+      .img-wrapper:hover
+        aside
+          opacity: 1
+      footer
         ul.techs
           list-style: none
           margin: 0
@@ -57,16 +86,3 @@ section#portfolio
           li
             margin: 0
             img
-
-      footer
-        text-align: right
-        a
-          padding: 5px 10px
-          color: $brand-color
-          i.fa
-            text-shadow: 2px 2px 2px $accent-color
-            transition: all .3s ease
-            &:hover
-              text-shadow: 4px 4px 6px $accent-color
-          .fa-github-square
-          .fa-globe

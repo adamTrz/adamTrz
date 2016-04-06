@@ -1,9 +1,9 @@
 nav(ng-controller='navCtrl as nav', ng-class = '{slideAnchors: nav.showMenu}')
 	#logo adam
 		span Trz
-	a(href="#", ng-click='main.setSection(1)', ng-class='{active: main.sectionSelected(1)}') portfolio
-	a(href="#", ng-click='main.setSection(2)', ng-class='{active: main.sectionSelected(2)}') about
-	a(href="#", ng-click='main.setSection(3)', ng-class='{active: main.sectionSelected(3)}') contact
+	a(href="#portfolio", ng-click='main.setSection(1)', ng-class='{active: main.sectionSelected(1)}') portfolio
+	a(href="#about", ng-click='main.setSection(2)', ng-class='{active: main.sectionSelected(2)}') about
+	a(href="#contact", ng-click='main.setSection(3)', ng-class='{active: main.sectionSelected(3)}') contact
 	.sub-nav(ng-click='nav.showAnchors()')
 		#hamburger(ng-class='{active: nav.showMenu}')
 			span

@@ -1,20 +1,20 @@
 section#portfolio(ng-show='main.sectionSelected(1)', ng-controller='portfolioCtrl as portfolio').container
   .row 
-    article(ng-repeat='image in portfolio.gallery').columns.twelve
-      header {%raw%}{{image.title}}{%endraw%}
-      ul.tasks Tasks:
+    article(ng-repeat='image in portfolio.gallery', ng-attr-id="slide0{%raw%}{{$index+1}} {%endraw%}").columns.twelve
+      header.slideInUp {%raw%}{{image.title}} {%endraw%}
+      ul.tasks.slideInUp.slideInUp2 Tasks:
         li(ng-repeat='task in image.tasks')
           i.material-icons {%raw%} {{portfolio.iconClass(task)}} {%endraw%}
           span {%raw%}{{task}}{%endraw%}
-      .img-wrapper
+      .img-wrapper.slideInUp.slideInUp3
         img(ng-src='{%raw%}{{image.url}}{%endraw%}').u-max-full-width
-      aside
-        ul.techs Technologies
+        aside
+          a(href='{%raw%}{{image.gitLink}}{%endraw%}', title='Wiev code repo on github.' target='_blank')
+            i.fa.fa-github
+          a(href='{%raw%}{{image.wwwLink}}{%endraw%}', title='Watch online.' target='_blank')
+            i.fa.fa-globe
+      footer.slideInUp.slideInUp4
+        ul.techs Tools:
           li(ng-repeat='tech in image.techs')
             img(ng-src="./assets/img/icons/{%raw%}{{tech}}{%endraw%}.png", alt="{%raw%}{{tech}}{%endraw%}", title="{%raw%}{{tech}}{%endraw%}", width='50px')
             //- | {%raw%}{{tech}}{%endraw%}
-      footer
-        a(href='{%raw%}{{image.gitLink}}{%endraw%}', title='Wiev code repo on github.' target='_blank')
-          i.fa.fa-github-square
-        a(href='{%raw%}{{image.wwwLink}}{%endraw%}', title='Watch online.' target='_blank')
-          i.fa.fa-globe

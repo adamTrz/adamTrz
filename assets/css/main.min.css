@@ -477,6 +477,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%; }
 
+article {
+  overflow-y: hidden; }
+  article .slideInUp {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50px, 0);
+            transform: translate3d(0, 50px, 0);
+    -webkit-transition: all 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+            transition: all 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+  article.is-active .slideInUp {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  article.is-active .slideInUp.slideInUp2 {
+    -webkit-transition-delay: .3s;
+            transition-delay: .3s; }
+  article.is-active .slideInUp.slideInUp3 {
+    -webkit-transition-delay: .5s;
+            transition-delay: .5s; }
+  article.is-active .slideInUp.slideInUp4 {
+    -webkit-transition-delay: .7s;
+            transition-delay: .7s; }
+
 nav {
   box-shadow: 2px 2px 10px #616161;
   background-color: #366399;
@@ -667,7 +691,7 @@ section#portfolio .row article {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-  padding-top: 50px; }
+  padding-top: 100px; }
   section#portfolio .row article header {
     text-align: center;
     font-size: 2em;
@@ -701,16 +725,28 @@ section#portfolio .row article {
         text-transform: uppercase; }
   section#portfolio .row article .img-wrapper {
     background-color: white;
-    box-shadow: 2px 2px 4px #616161;
     max-height: 50%;
     height: 50%;
     margin: 0 1%;
     overflow: hidden;
-    -webkit-transition: all .3s ease;
-            transition: all .3s ease;
+    box-shadow: 2px 2px 4px #616161;
     position: relative; }
     section#portfolio .row article .img-wrapper:hover {
-      box-shadow: 4px 4px 6px #616161; }
+      -webkit-transition-delay: 0s;
+              transition-delay: 0s; }
+      section#portfolio .row article .img-wrapper:hover:after {
+        opacity: 0; }
+    section#portfolio .row article .img-wrapper:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(54, 99, 153, 0.2);
+      opacity: 1;
+      -webkit-transition: all .5s ease;
+              transition: all .5s ease; }
     section#portfolio .row article .img-wrapper img {
       display: block;
       position: absolute;
@@ -718,7 +754,28 @@ section#portfolio .row article {
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%); }
-  section#portfolio .row article aside ul.techs {
+    section#portfolio .row article .img-wrapper aside {
+      position: absolute;
+      right: 5%;
+      bottom: 5%;
+      text-align: right;
+      z-index: 100;
+      opacity: 0;
+      -webkit-transition: all .3s ease;
+              transition: all .3s ease; }
+      section#portfolio .row article .img-wrapper aside a {
+        padding: 5px 10px;
+        color: #366399; }
+        section#portfolio .row article .img-wrapper aside a i.fa {
+          font-size: 1.2em;
+          text-shadow: 2px 2px 2px #616161;
+          -webkit-transition: all .3s ease;
+                  transition: all .3s ease; }
+          section#portfolio .row article .img-wrapper aside a i.fa:hover {
+            text-shadow: 4px 4px 6px #616161; }
+  section#portfolio .row article .img-wrapper:hover aside {
+    opacity: 1; }
+  section#portfolio .row article footer ul.techs {
     list-style: none;
     margin: 0;
     display: -webkit-box;
@@ -735,19 +792,12 @@ section#portfolio .row article {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-    section#portfolio .row article aside ul.techs li {
+    section#portfolio .row article footer ul.techs li {
       margin: 0; }
-  section#portfolio .row article footer {
-    text-align: right; }
-    section#portfolio .row article footer a {
-      padding: 5px 10px;
-      color: #366399; }
-      section#portfolio .row article footer a i.fa {
-        text-shadow: 2px 2px 2px #616161;
-        -webkit-transition: all .3s ease;
-                transition: all .3s ease; }
-        section#portfolio .row article footer a i.fa:hover {
-          text-shadow: 4px 4px 6px #616161; }
+
+section#about .row article {
+  height: 100vh;
+  padding-top: 100px; }
 
 section#contact article {
   margin-top: 100px; }
