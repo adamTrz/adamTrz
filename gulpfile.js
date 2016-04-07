@@ -20,7 +20,7 @@ var messages = {
 // Build the Jekyll Site
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+    return cp.spawn('jekyll', ['build'], {stdio: 'pipe'})
         .on('close', done);
 });
 
@@ -62,6 +62,14 @@ gulp.task('jade', function(){
   }))
   .pipe(gulp.dest('_includes'));
 });
+gulp.task('templates', function(){
+  return gulp.src('_jadefiles/pages/*.jade')
+  .pipe(jade({
+    pretty: true
+  }))
+  .pipe(gulp.dest('pages'))
+  // .pipe(gulp.dest('_site/assets/pages'));
+});
 
 
 // Catch JS errors
@@ -96,6 +104,7 @@ gulp.task('watch', function () {
     gulp.watch('assets/js/functions.js',['jshint','compress']);
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
+    gulp.watch('_jadefiles/pages/*.jade', ['templates']);
 });
 
 

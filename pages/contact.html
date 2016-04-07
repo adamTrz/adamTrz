@@ -1,14 +1,14 @@
 
-<section id="contact" ng-show="main.sectionSelected(3)" class="container">
-  <article ng-controller="contactCtrl as contact">
+<section id="contact" class="container">
+  <article>
     <header>Lets talk smack</header>
     <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" class="row">
       <div class="form-previev six columns">
         <blockquote class="row">
-          <div class="preview-sender twelve columns"><i>From:  </i><span>{%raw%} {{ contact.mail.sender || 'Name, Surname' }} {%endraw%}</span></div>
-          <div class="preview-subject eight columns pull-right"><i>@ </i><span>{%raw%}{{ contact.mail.email || 'mail@mail.com' }}{%endraw%}</span></div>
+          <div class="preview-sender twelve columns"><i>From:  </i><span> {{ contact.mail.sender || 'Name, Surname' }} </span></div>
+          <div class="preview-subject eight columns pull-right"><i>@ </i><span>{{ contact.mail.email || 'mail@mail.com' }}</span></div>
           <div class="preview-txt twelve columns"><i>Message:</i>
-            <q>{%raw%}{{ contact.mail.message || 'Your msg...' }}{%endraw%}</q>
+            <q>{{ contact.mail.message || 'Your msg...' }}</q>
           </div>
         </blockquote>
       </div>
@@ -28,6 +28,6 @@
         <button type="submit" ng-disabled="contactForm.$invalid" class="u-pull-right">Send</button>
       </div>
     </form>
-    <aside><span ng-repeat="social in contact.socials"><a title="{%raw%}{{social.title}}{%endraw%}" ng-href="{%raw%}{{social.url}}{%endraw%}" target="_blank"><i ng-class="social.icon" class="fa fa-2x fa-fw"></i></a></span></aside>
+    <aside><span ng-repeat="social in contact.socials"><a title="{{social.title}}" ng-href="{{social.url}}" target="_blank"><i ng-class="social.icon" class="fa fa-2x fa-fw"></i></a></span></aside>
   </article>
 </section>

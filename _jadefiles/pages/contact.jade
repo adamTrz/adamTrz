@@ -1,18 +1,18 @@
-section#contact(ng-show='main.sectionSelected(3)').container
-  article(ng-controller='contactCtrl as contact')
+section#contact.container
+  article
     header Lets talk smack
     form(name='contactForm' ng-submit='contactForm.$valid &&  contact.formSubmit(contact.mail, contactForm)' novalidate, autocomplete="off").row
       .form-previev.six.columns
         blockquote.row
           .preview-sender.twelve.columns
             i From:  
-            span {%raw%} {{ contact.mail.sender || 'Name, Surname' }} {%endraw%}
+            span  {{ contact.mail.sender || 'Name, Surname' }} 
           .preview-subject.eight.columns.pull-right
             i @ 
-            span {%raw%}{{ contact.mail.email || 'mail@mail.com' }}{%endraw%}
+            span {{ contact.mail.email || 'mail@mail.com' }}
           .preview-txt.twelve.columns
             i Message:
-            q {%raw%}{{ contact.mail.message || 'Your msg...' }}{%endraw%}
+            q {{ contact.mail.message || 'Your msg...' }}
       .six.columns.form
         .input-group
           input.u-full-width(type="text", ng-model='contact.mail.sender', data-ng-pattern="/^[a-zA-Z ]*$/", name = 'sender', required)#emailSender
@@ -30,7 +30,7 @@ section#contact(ng-show='main.sectionSelected(3)').container
         button(type='submit' ng-disabled='contactForm.$invalid').u-pull-right Send
     aside
       span(ng-repeat='social in contact.socials')
-        a(title='{%raw%}{{social.title}}{%endraw%}', ng-href='{%raw%}{{social.url}}{%endraw%}', target='_blank')
+        a(title='{{social.title}}', ng-href='{{social.url}}', target='_blank')
           i.fa.fa-2x.fa-fw(ng-class='social.icon')
         
       

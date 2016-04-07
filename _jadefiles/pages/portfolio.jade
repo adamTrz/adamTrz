@@ -1,0 +1,20 @@
+section#portfolio.container
+  .row 
+    article(ng-repeat='image in portfolio.gallery', ng-attr-id="slide0{{$index+1}} ").columns.twelve
+      header.slideInUp {{image.title}} 
+      ul.tasks.slideInUp.slideInUp2 Tasks:
+        li(ng-repeat='task in image.tasks')
+          i.material-icons  {{portfolio.iconClass(task)}} 
+          span {{task}}
+      .img-wrapper.slideInUp.slideInUp3
+        img(ng-src='{{image.url}}').u-max-full-width
+        aside
+          a(href='{{image.gitLink}}', title='Wiev code repo on github.' target='_blank')
+            i.fa.fa-github
+          a(href='{{image.wwwLink}}', title='Watch online.' target='_blank')
+            i.fa.fa-globe
+      footer.slideInUp.slideInUp4
+        ul.techs Tools:
+          li(ng-repeat='tech in image.techs')
+            img(ng-src="./assets/img/icons/{{tech}}.png", alt="{{tech}}", title="{{tech}}", width='50px')
+            //- | {{tech}}

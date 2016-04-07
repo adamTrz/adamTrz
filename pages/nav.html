@@ -1,0 +1,7 @@
+
+<nav ng-class="{slideAnchors: nav.showMenu}">
+  <div id="logo">adam<span>Trz</span></div><a href="#portfolio" ng-click="nav.setActive(1)" ng-class="{active: nav.activePane === 1}">portfolio</a><a href="#about" ng-click="nav.setActive(2)" ng-class="{active: nav.activePane === 2}">about</a><a href="#contact" ng-click="nav.setActive(3)" ng-class="{active: nav.activePane === 3}">contact</a>
+  <div ng-click="nav.showAnchors()" class="sub-nav">
+    <div id="hamburger" ng-class="{active: nav.showMenu}"><span></span></div>
+  </div>
+</nav>
