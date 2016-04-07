@@ -11,17 +11,17 @@ section#portfolio
         font-size: 2em
         font-weight: 300
       ul.tasks
-        font-size: .8em
         margin: 0
         list-style: none
         display: flex
         flex-flow: row nowrap
         justify-content: space-around
+        font-size: 22px
         li
           margin: 0
           display: flex
           i
-            padding-right: 5px
+            padding-right: 10px
             color: $brand-color
             text-shadow: 2px 2px 4px $accent-color
           span
@@ -30,7 +30,6 @@ section#portfolio
 
       .img-wrapper
         background-color: white
-        max-height: 50%
         height: 50%
         margin: 0 1%
         // padding: 8px
@@ -44,8 +43,7 @@ section#portfolio
         &:after
           content: ''
           +position(absolute, 0 0)
-          // +background-image(linear-gradient(rgba(0,0,0,.5) 0, rgba(0,0,0,.1) 50%, rgba(0,0,0,0) 75%, transparent 50%))
-          background-color: transparentize($brand-color, 0.8)
+          background-color: transparentize($brand-color, 0.9)
           opacity: 1
           transition: all .5s ease
         img
@@ -60,14 +58,14 @@ section#portfolio
           text-align: right
           z-index: 100
           opacity: 0
-          transition: all .3s ease
+          transition: $std-transition
           a
             padding: 5px 10px
             color: $brand-color
             i.fa
               font-size: 1.2em
               text-shadow: 2px 2px 2px $accent-color
-              transition: all .3s ease
+              transition: $std-transition
               &:hover
                 text-shadow: 4px 4px 6px $accent-color
             .fa-github-square

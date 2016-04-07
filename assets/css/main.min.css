@@ -478,14 +478,24 @@ body {
   -webkit-text-size-adjust: 100%; }
 
 .view-animation.ng-enter {
-  -webkit-animation: slideInRight 1s both ease-in;
-          animation: slideInRight 1s both ease-in;
-  z-index: 8888 !important; }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: slideInRight 1s both ease;
+          animation: slideInRight 1s both ease;
+  z-index: 8888 !important;
+  overflow-y: hidden; }
 
 .view-animation.ng-leave {
-  -webkit-animation: slideOutLeft .5s both ease-in;
-          animation: slideOutLeft .5s both ease-in;
-  z-index: 9999 !important; }
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  -webkit-animation: slideOutLeft 1s both ease;
+          animation: slideOutLeft 1s both ease;
+  z-index: 9999 !important;
+  overflow-y: hidden; }
 
 @-webkit-keyframes slideInRight {
   0% {
@@ -529,9 +539,31 @@ body {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%); } }
 
+article {
+  overflow-y: hidden; }
+  article .slideInUp {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50px, 0);
+            transform: translate3d(0, 50px, 0);
+    -webkit-transition: all 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+            transition: all 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+  article.is-active .slideInUp {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  article.is-active .slideInUp.slideInUp2 {
+    -webkit-transition-delay: .3s;
+            transition-delay: .3s; }
+  article.is-active .slideInUp.slideInUp3 {
+    -webkit-transition-delay: .5s;
+            transition-delay: .5s; }
+  article.is-active .slideInUp.slideInUp4 {
+    -webkit-transition-delay: .7s;
+            transition-delay: .7s; }
+
 nav {
-  box-shadow: 2px 2px 10px #616161;
-  background-color: #366399;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -546,21 +578,25 @@ nav {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 30px;
-  -webkit-transition: all .5s ease;
-          transition: all .5s ease;
-  -webkit-transition-delay: 0 .5s;
-          transition-delay: 0 .5s;
   overflow-x: hidden;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 200; }
+  z-index: 200;
+  background-color: transparent;
+  box-shadow: 0px 0px 0px #616161;
+  -webkit-transition: all .5s ease;
+          transition: all .5s ease;
+  -webkit-transition-delay: 0 .5s;
+          transition-delay: 0 .5s; }
   nav #logo {
-    color: #F5F5F5;
+    color: #366399;
     font-family: 'Montserrat', sans-serif;
-    text-shadow: 2px 2px 4px #212121;
-    cursor: pointer; }
+    text-shadow: 2px 2px 10px #212121;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease; }
     nav #logo span {
       font-weight: 700; }
     nav #logo:hover {
@@ -574,8 +610,8 @@ nav {
     overflow: hidden;
     min-width: 200px;
     opacity: 0.75;
-    -webkit-transition: all .3s ease;
-            transition: all .3s ease;
+    -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
     -webkit-transition: -webkit-transform 1s ease;
             transition: transform 1s ease; }
     nav a:before, nav a:after {
@@ -620,7 +656,7 @@ nav {
       height: 3px;
       position: relative;
       margin-top: 14px;
-      background-color: #F5F5F5;
+      background-color: #616161;
       box-shadow: 2px 2px 2px #212121;
       -webkit-animation-name: navJinx;
               animation-name: navJinx;
@@ -628,8 +664,8 @@ nav {
               animation-duration: 20s;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite;
-      -webkit-transition: all .3s ease;
-              transition: all .3s ease; }
+      -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease; }
       nav .sub-nav #hamburger:before, nav .sub-nav #hamburger:after {
         position: absolute;
         left: 3px;
@@ -637,10 +673,10 @@ nav {
         display: inline-block;
         width: 25px;
         height: 3px;
-        background-color: #F5F5F5;
+        background-color: #616161;
         box-shadow: 2px 2px 2px #212121;
-        -webkit-transition: all .3s ease;
-                transition: all .3s ease; }
+        -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease; }
       nav .sub-nav #hamburger:before {
         top: -8px;
         -webkit-transform-origin: top left;
@@ -670,14 +706,21 @@ nav {
               transform: rotate(-45deg);
       box-shadow: 0px 2px 2px #212121; }
 
-nav.slideAnchors a {
-  color: #F5F5F5;
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px); }
-
-nav.slideAnchors .sub-nav #hamburger {
-  -webkit-animation-iteration-count: 0;
-          animation-iteration-count: 0; }
+nav.slideAnchors {
+  background-color: #366399;
+  box-shadow: 2px 2px 10px #616161; }
+  nav.slideAnchors #logo {
+    color: #F5F5F5; }
+  nav.slideAnchors a {
+    color: #F5F5F5;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px); }
+  nav.slideAnchors .sub-nav #hamburger {
+    background-color: #F5F5F5;
+    -webkit-animation-iteration-count: 0;
+            animation-iteration-count: 0; }
+    nav.slideAnchors .sub-nav #hamburger:before, nav.slideAnchors .sub-nav #hamburger:after {
+      background-color: #F5F5F5; }
 
 @-webkit-keyframes navJinx {
   0% {
@@ -725,7 +768,6 @@ section#portfolio .row article {
     font-size: 2em;
     font-weight: 300; }
   section#portfolio .row article ul.tasks {
-    font-size: .8em;
     margin: 0;
     list-style: none;
     display: -webkit-box;
@@ -737,7 +779,8 @@ section#portfolio .row article {
             flex-flow: row nowrap;
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
-            justify-content: space-around; }
+            justify-content: space-around;
+    font-size: 22px; }
     section#portfolio .row article ul.tasks li {
       margin: 0;
       display: -webkit-box;
@@ -745,7 +788,7 @@ section#portfolio .row article {
       display: -ms-flexbox;
       display: flex; }
       section#portfolio .row article ul.tasks li i {
-        padding-right: 5px;
+        padding-right: 10px;
         color: #366399;
         text-shadow: 2px 2px 4px #616161; }
       section#portfolio .row article ul.tasks li span {
@@ -753,7 +796,6 @@ section#portfolio .row article {
         text-transform: uppercase; }
   section#portfolio .row article .img-wrapper {
     background-color: white;
-    max-height: 50%;
     height: 50%;
     margin: 0 1%;
     overflow: hidden;
@@ -771,7 +813,7 @@ section#portfolio .row article {
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: rgba(54, 99, 153, 0.2);
+      background-color: rgba(54, 99, 153, 0.1);
       opacity: 1;
       -webkit-transition: all .5s ease;
               transition: all .5s ease; }
@@ -789,16 +831,16 @@ section#portfolio .row article {
       text-align: right;
       z-index: 100;
       opacity: 0;
-      -webkit-transition: all .3s ease;
-              transition: all .3s ease; }
+      -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease; }
       section#portfolio .row article .img-wrapper aside a {
         padding: 5px 10px;
         color: #366399; }
         section#portfolio .row article .img-wrapper aside a i.fa {
           font-size: 1.2em;
           text-shadow: 2px 2px 2px #616161;
-          -webkit-transition: all .3s ease;
-                  transition: all .3s ease; }
+          -webkit-transition: all 0.3s ease;
+                  transition: all 0.3s ease; }
           section#portfolio .row article .img-wrapper aside a i.fa:hover {
             text-shadow: 4px 4px 6px #616161; }
   section#portfolio .row article .img-wrapper:hover aside {
@@ -883,8 +925,8 @@ section#contact article {
         pointer-events: none;
         font-weight: 300;
         font-size: 0.8em;
-        -webkit-transition: all .3s ease;
-                transition: all .3s ease; }
+        -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease; }
       section#contact article form .form .input-group input:focus ~ label, section#contact article form .form .input-group input:not(.ng-empty) ~ label, section#contact article form .form .input-group textarea:focus ~ label, section#contact article form .form .input-group textarea:not(.ng-empty) ~ label {
         font-size: 0.6em;
         color: #616161;
@@ -901,8 +943,8 @@ section#contact article {
         border: none;
         border-radius: 0;
         border-bottom: solid 1px #366399;
-        -webkit-transition: all .3s ease;
-                transition: all .3s ease; }
+        -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease; }
         section#contact article form .form .input-group input:focus, section#contact article form .form .input-group textarea:focus {
           border-bottom: 2px solid #366399; }
       section#contact article form .form .input-group textarea {
@@ -916,8 +958,8 @@ section#contact article {
         padding-left: .2em;
         font-size: 0.6em;
         color: red;
-        -webkit-transition: all .3s ease;
-                transition: all .3s ease; }
+        -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease; }
         section#contact article form .form .input-group .error.ng-hide {
           opacity: 0; }
     section#contact article form .form button {
@@ -928,13 +970,16 @@ section#contact article {
       text-transform: uppercase;
       font-weight: 600;
       font-size: 0.6em;
-      -webkit-transition: all .3s ease;
-              transition: all .3s ease; }
+      -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease; }
     section#contact article form .form button[disabled=disabled] {
       color: #F5F5F5;
+      color: #616161;
       border-color: #b0b0b0;
       background-color: silver;
-      box-shadow: 0px 0px 0px #F5F5F5; }
+      background-color: #F5F5F5;
+      box-shadow: 0px 0px 0px #F5F5F5;
+      box-shadow: 1px 1px 4px #616161; }
 
 section#contact aside {
   margin-top: 50px;
@@ -944,8 +989,8 @@ section#contact aside {
     section#contact aside span a {
       color: #366399; }
       section#contact aside span a i.fa {
-        -webkit-transition: all .3s ease;
-                transition: all .3s ease;
+        -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease;
         text-shadow: 2px 2px 2px #616161; }
         section#contact aside span a i.fa:hover {
           text-shadow: 4px 4px 4px #616161; }
