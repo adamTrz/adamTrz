@@ -87,7 +87,7 @@
       link: function(scope, elem, attrs) {
         var scene = new ScrollMagic.Scene({
             triggerElement: elem[0],
-            offset: -100
+            offset: -200
         })
       .setClassToggle(elem[0], 'is-active')
       .addTo(controller);

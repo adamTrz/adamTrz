@@ -5,6 +5,7 @@
     <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" class="row">
       <div class="form-previev six columns">
         <blockquote class="row">
+          <header class="preview">Preview:</header>
           <div class="preview-sender twelve columns"><i>From:  </i><span> {{ contact.mail.sender || 'Name, Surname' }} </span></div>
           <div class="preview-subject eight columns pull-right"><i>@ </i><span>{{ contact.mail.email || 'mail@mail.com' }}</span></div>
           <div class="preview-txt twelve columns"><i>Message:</i>
@@ -12,7 +13,7 @@
           </div>
         </blockquote>
       </div>
-      <div class="six columns form">
+      <div class="form six columns">
         <div class="input-group">
           <input type="text" ng-model="contact.mail.sender" data-ng-pattern="/^[a-zA-Z ]*$/" name="sender" required="required" id="emailSender" class="u-full-width"/>
           <label>Name, Surname:</label><span ng-show="contactForm.sender.$invalid  &amp;&amp; !contactForm.sender.$pristine" class="error u-full-width">No digits or special characters allowed.</span>
@@ -28,6 +29,8 @@
         <button type="submit" ng-disabled="contactForm.$invalid" class="u-pull-right">Send</button>
       </div>
     </form>
-    <aside><span ng-repeat="social in contact.socials"><a title="{{social.title}}" ng-href="{{social.url}}" target="_blank"><i ng-class="social.icon" class="fa fa-2x fa-fw"></i></a></span></aside>
+    <aside>
+      <header class="aside-header">Moar about me:</header><span ng-repeat="social in contact.socials"><a title="{{social.title}}" ng-href="{{social.url}}" target="_blank"><i ng-class="social.icon" class="fa fa-2x fa-fw"></i></a></span>
+    </aside>
   </article>
 </section>
