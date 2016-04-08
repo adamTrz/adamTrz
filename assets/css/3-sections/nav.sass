@@ -15,24 +15,29 @@ nav
   transition-delay: 0 .5s
   #logo
     color: $brand-color
-    font-family: 'Montserrat', sans-serif
     text-shadow: 2px 2px 10px $text-color
     cursor: pointer
     transition: $std-transition
+    flex-grow: 1
     span
       font-weight: 700
     &:hover
       text-shadow: 4px 4px 4px $text-color
-  a
-    color: $secondary-color
+  .anchors
+    flex-grow: 2
     transform: translateX(2000px)
-    text-transform: uppercase
-    text-decoration: none
     overflow: hidden
-    min-width: 200px
-    opacity: 0.75
     transition: $std-transition
     transition: transform 1s ease
+    display: inline-flex
+    justify-content: space-around
+  a
+    color: $secondary-color
+    text-transform: uppercase
+    text-decoration: none
+    // min-width: 200px
+    padding: 0 25px
+    opacity: 0.75
     &:before, &:after
       content: ' / '
       display: inline-block
@@ -48,31 +53,36 @@ nav
       &:before, &:after
         opacity: 1
       &:before
-        transform: translateX(-20px)
+        transform: translateX(-1em)
       &:after
-        transform: translateX(20px)
+        transform: translateX(1em)
     &.active
       opacity: 1
       text-decoration: none
       &:before, &:after
         opacity: 1
       &:before
-        transform: translateX(-20px)
+        transform: translateX(-1em)
       &:after
-        transform: translateX(20px)
+        transform: translateX(1em)
   .sub-nav
     cursor: pointer
     width: 40px
+    flex-grow: 1
+    align-content: flex-end
     #hamburger
       content: ''
       width: 33px
       height: 3px
       position: relative
-      margin-top: 14px
-      background-color: $accent-color
+      margin-top: 16px
+      margin-left: auto
+      margin-right: auto
+      background-color: $brand-color
       box-shadow: 2px 2px 2px $text-color
       animation-name: navJinx
       animation-duration: 20s
+      // animation-duration: 2s
       animation-iteration-count: infinite
       transition: $std-transition
       &:before, &:after
@@ -82,7 +92,7 @@ nav
         display: inline-block
         width: 25px
         height: 3px
-        background-color: $accent-color
+        background-color: $brand-color
         box-shadow: 2px 2px 2px $text-color
         transition: $std-transition
       &:before
@@ -95,10 +105,8 @@ nav
   // NAV HOVER
   .sub-nav:hover
     #hamburger
-      background-color: $primary-color
       box-shadow: 4px 4px 4px $text-color
       &:before, &:after
-        background-color: $primary-color
         box-shadow: 4px 4px 4px $text-color
       &.active
         &:before
@@ -121,9 +129,10 @@ nav.slideAnchors
   box-shadow: 2px 2px 10px $accent-color
   #logo
     color: $secondary-color
+  .anchors
+    transform: translateX(0px)
   a
     color: $secondary-color
-    transform: translateX(50px)
   .sub-nav
     #hamburger
       background-color: $secondary-color
@@ -133,10 +142,49 @@ nav.slideAnchors
 
 +keyframes(navJinx)
   0%
-    transform: scaleX(1)
+    transform: scaleY(1)
+    transform: rotateY(0deg)
   2%
-    transform: scaleX(1.4)
+    transform: scaleY(1.4)
+    transform: rotateY(90deg)
   4%
     transform: scaleX(1)
   100%
     transform: scaleX(1)
+
+@media (max-width: $desktop)
+  nav
+    background-color: transparentize($bg-color, 0.5)
+@media (max-width: $phablet)
+  nav
+    #logo
+      font-size: .8em
+      flex-grow: 1
+      order: 1
+      text-align: left
+      padding-left: 1em
+    .anchors
+      // padding-top: 1em
+      order: 2
+      flex-grow: 1
+      font-size: .6em
+      line-height: 1em
+      align-items: center
+      a
+        padding: 0 20px
+    .sub-nav
+      transform: scale(.6)
+      order: 3
+      flex-grow: 1
+      #hamburger
+        margin-right: .6em
+        margin-top: 10px
+@media (max-width: $mobile)
+  nav
+    #logo
+      order: 1
+    .anchors
+      padding-top: 1em
+      order: 3
+    .sub-nav
+      order: 2

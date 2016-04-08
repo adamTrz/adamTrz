@@ -1,6 +1,7 @@
 
 <nav ng-class="{slideAnchors: nav.showMenu}">
-  <div id="logo">adam<span>Trz</span></div><a ui-sref="portfolio" ng-click="nav.setActive(1)" ui-sref-active="active">portfolio</a><a ui-sref="about" ng-click="nav.setActive(2)" ui-sref-active="active">about</a><a ui-sref="contact" ng-click="nav.setActive(3)" ui-sref-active="active">contact</a>
+  <div id="logo">adam<span>Trz</span></div>
+  <div class="anchors"><a ui-sref="portfolio" ng-click="nav.setActive(1)" ui-sref-active="active">portfolio</a><a ui-sref="about" ng-click="nav.setActive(2)" ui-sref-active="active">about</a><a ui-sref="contact" ng-click="nav.setActive(3)" ui-sref-active="active">contact</a></div>
   <div ng-click="nav.showAnchors()" class="sub-nav">
     <div id="hamburger" ng-class="{active: nav.showMenu}"><span></span></div>
   </div>

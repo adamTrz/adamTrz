@@ -1,12 +1,15 @@
 (function(){
   'use strict'
+///////////////////////////
+// APP DECLARATION AND CONFIG:
+///////////////////////////
+
   let app =  angular.module('app', ['ngAnimate','ui.router'])
 
   //hack from http://stackoverflow.com/questions/17497006/use-http-inside-custom-provider-in-app-config-angular-js/21536845#21536845
   // allow to inject $http into configuration resolve function
   let initInjector = angular.injector(['ng']);
   let $http = initInjector.get('$http');
-
 
   app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state,  $stateParams) {
     // It's very handy to add references to $state and $stateParams to the $rootScope so that you can access them from any scope within your applications.For example, <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li> to active whenever 'contacts.list' or one of its decendents is active.
@@ -60,6 +63,9 @@
       })
   }])
 
+///////////////////////////
+// DIRECTIVES
+///////////////////////////
   app.directive('navigation',function() {
     return {
       restrict:       'E',
@@ -68,14 +74,17 @@
       controllerAs:   'nav'
     }
   })
-
-  let controller = new ScrollMagic.Controller()
+  app.directive('foot', function() {
+    return {
+      restrict:       'E',
+      templateUrl:    './pages/foot.html'
+    }
+  })
   app.directive('portfolioItem', function() {
     return {
       restrict:       'A',
       templateUrl:     './pages/portfolio-item.html',
       link: function(scope, elem, attrs) {
-        console.log(elem[0]);
         var scene = new ScrollMagic.Scene({
             triggerElement: elem[0],
             offset: -100
@@ -86,6 +95,10 @@
       }
     }
   })
+///////////////////////////
+// CONTROLLERS:
+///////////////////////////
+  let controller = new ScrollMagic.Controller()
 
   app.controller('aboutCtrl',function(){
   })
@@ -121,32 +134,11 @@
     )
   }])
 
-
-//////////////////////////////////////////////////
 })()
 
+///////////////////////////
+// jQuery stuff:
+///////////////////////////
 $(function(){
 
-
-  // Init ScrollMagic
-  // var controller = new ScrollMagic.Controller();
-  // get all triggers - headers of all 3 slides
-  // var $headers = $('portfolio #portfolio article')
-  // console.log($headers);
-  // var headers = jQuery.makeArray($headers)
-  // var headers = ['slide01','slide02','slide03','slide04','slide05','slide06',]
-  // console.log(headers);
-  // SCENE 1
-  // create scenes for each of the headers
-  // headers.forEach(function (header, index) {
-  //   // number for highlighting scenes
-  //   var num = index+1;
-  //     // make scene
-  //     var headerScene = new ScrollMagic.Scene({
-  //         triggerElement: header,
-  //         offset: -100
-  //     })
-  //     .setClassToggle('#slide0'+num, 'is-active')
-  //     .addTo(controller);
-  // });
 });
