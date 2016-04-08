@@ -1,0 +1,6 @@
+[
+	{"task":  "design",     "icon": "lightbulb_outline"},
+	{"task":  "layout",     "icon": "line_style"},
+	{"task":  "code",       "icon": "code"},
+	{"task":  "animations", "icon": "crop_rotate"}
+]

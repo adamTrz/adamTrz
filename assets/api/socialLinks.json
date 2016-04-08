@@ -1,0 +1,14 @@
+[
+	{ "url":    "https://github.com/adamTrz",
+		"title":  "GitHub",
+		"icon":   "fa-git"
+	},
+	{ "url":    "http://codepen.io/adamTrz/",
+		"title":  "CodePen",
+		"icon":   "fa-codepen"
+	},
+	{ "url":    "https://www.linkedin.com/in/adamtrz",
+		"title":  "LinkedIn",
+		"icon":   "fa-linkedin"
+	}
+]

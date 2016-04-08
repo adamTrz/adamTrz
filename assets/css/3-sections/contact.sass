@@ -13,8 +13,6 @@ section#contact
       width: 100%
       display: inline-flex
       flex-flow: row wrap
-      // align-items: stretch
-      // justify-content: center
       .form-previev
         blockquote
           margin: 0
@@ -44,7 +42,7 @@ section#contact
             pointer-events: none
             font-weight: 300
             font-size: 0.8em
-            transition: all .3s ease
+            transition: $std-transition
           input:focus ~label, input:not(.ng-empty) ~label, textarea:focus ~label, textarea:not(.ng-empty) ~label
             font-size: 0.6em
             color: $accent-color
@@ -62,7 +60,7 @@ section#contact
             border: none
             border-radius: 0
             border-bottom: solid 1px $brand-color
-            transition: all .3s ease
+            transition: $std-transition
             &:focus
               border-bottom: 2px solid $brand-color
           textarea
@@ -75,11 +73,12 @@ section#contact
             padding-left: .2em
             font-size: 0.6em
             color: red
-            transition: all .3s ease
+            transition: $std-transition
             &.ng-hide
               opacity: 0
 
         button
+          margin-right: 10px
           border-color: $brand-color
           background-color: $brand-color
           color: white
@@ -88,13 +87,16 @@ section#contact
           font:
             weight: 600
             size: 0.6em
-          transition: all .3s ease
+          transition: $std-transition
         button[disabled=disabled]
           color: $bg-color
+          color: $accent-color
           border-color: tint($accent-color, 50%)
           background-color: tint($accent-color, 60%)
+          background-color: $bg-color
           // font-weight: 400
           box-shadow: 0px 0px 0px $bg-color
+          box-shadow: 1px 1px 4px $accent-color
   aside
     margin-top: 50px
     text-align: center
@@ -103,7 +105,7 @@ section#contact
       a
         color: $brand-color
         i.fa
-          transition: all .3s ease
+          transition: $std-transition
           text-shadow: 2px 2px 2px $accent-color
           &:hover
             text-shadow: 4px 4px 4px $accent-color
