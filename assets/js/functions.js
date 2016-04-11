@@ -62,6 +62,11 @@
         }
       })
   }])
+  app.filter('noDots', function () {
+    return function(str) {
+      return str.slice(0,str.indexOf('.'))
+    }
+  })
 
 ///////////////////////////
 // DIRECTIVES
@@ -91,7 +96,6 @@
         })
       .setClassToggle(elem[0], 'is-active')
       .addTo(controller);
-      // console.log(scene);
       }
     }
   })
@@ -100,8 +104,18 @@
 ///////////////////////////
   let controller = new ScrollMagic.Controller()
 
-  app.controller('aboutCtrl',function(){
-  })
+  app.controller('aboutCtrl',['$http', function($http){
+    let vm = this
+    vm.who = "Adam Trzciński"
+    vm.skillset = {}
+    $http.get('./assets/api/skillset.json').then(function(resp) {
+      console.log(resp);
+      vm.skillset = resp.data
+    })
+
+    console.log(this.skillset)
+
+  }])
 
   app.controller('navCtrl', function(){
     this.showMenu = 1
@@ -121,6 +135,7 @@
       })
       return classObj[0].icon
     })
+
   }])
   app.controller('contactCtrl', ['socialLinks', function(socialLinks){
     this.mail = {}
@@ -135,10 +150,3 @@
   }])
 
 })()
-
-///////////////////////////
-// jQuery stuff:
-///////////////////////////
-$(function(){
-
-});

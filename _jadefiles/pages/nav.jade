@@ -1,5 +1,5 @@
 nav(ng-class = '{slideAnchors: nav.showMenu}')
-	#logo adam
+	#logo(ui-sref="about") adam
 		span Trz
 	.anchors
 		a(ui-sref="portfolio", ng-click='nav.setActive(1)', ui-sref-active='active') portfolio

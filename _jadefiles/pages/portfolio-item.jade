@@ -13,6 +13,9 @@ header.slideInUp {{image.title}}
     a(href='{{image.wwwLink}}', title='Watch online.' target='_blank')
       i.fa.fa-globe
 footer.slideInUp.slideInUp4
+  .list-heading Made with:
   ul.techs
     li(ng-repeat='tech in image.techs')
-      img(ng-src="./assets/img/icons/{{tech}}.png", alt="{{tech}}", title="{{tech}}", width='50px')
+      //- img(ng-src="./assets/img/icons/{{tech}}.svg", alt="{{tech}}", title="{{tech}}")
+      img.logo(ng-src="/assets/img/icons/{{tech}}",alt="{{tech | noDots}}", title="{{tech | noDots}}", ng-class="tech")
+      p {{tech | noDots}}

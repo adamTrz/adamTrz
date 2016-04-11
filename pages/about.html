@@ -1,9 +1,33 @@
 
 <section id="about" class="container">
-  <div class="row">
-    <article class="columns twelve">
-      <header>Adam Trzciński</header>
-      <p>Fascinated with web design, user interface and web animations. Ambitious, focused on realistation of new goals and challenges. Eager to learn new technologies, independent but also aware of importance of team work.</p>
-    </article>
-  </div>
+  <article class="row">
+    <header class="columns twelve">{{ about.who }}</header>
+    <div class="row blob">
+      <figure class="columns four"><img src="http://fillmurray.com/g/300/300" alt="" class="u-max-full-width"/></figure>
+      <p class="columns eight">Fascinated with web design, user interface and web animations. Ambitious, focused on realistation of new goals and challenges. Eager to learn new technologies, independent but also aware of importance of team work.</p>
+    </div>
+    <div class="row skills">
+      <header class="columns twelve">Skill set</header>
+      <div class="row">
+        <div class="columns four">
+          <hgroup>Aquired</hgroup>
+          <ul>
+            <li ng-repeat="skill in about.skillset[0].aquired"><i class="material-icons">check</i><span>{{skill}}</span></li>
+          </ul>
+        </div>
+        <div class="columns four">
+          <hgroup>Work in progress</hgroup>
+          <ul>
+            <li ng-repeat="skill in about.skillset[0].current"><i class="material-icons">check_box_outline_blank</i><span>{{ skill }}</span></li>
+          </ul>
+        </div>
+        <div class="columns four">
+          <hgroup>Plans for future</hgroup>
+          <ul>
+            <li ng-repeat="skill in about.skillset[0].future"><i class="material-icons">check_box_outline_blank</i><span>{{ skill }}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
 </section>

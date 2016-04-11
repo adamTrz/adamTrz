@@ -6,7 +6,7 @@ section#portfolio
       display: flex
       flex-flow: column nowrap
       justify-content: space-around
-      padding-bottom: 30px
+      padding-bottom: 50px
       &:first-child
         padding-top: 100px
         .img-wrapper
@@ -16,7 +16,9 @@ section#portfolio
         text-align: center
         font-size: 2em
         font-weight: 300
+        padding: 10px 0
       .tasks.slideInUp.slideInUp2
+        padding: 10px 0
         .list-heading
           text-decoration: underline
           text-decoration-color: $brand-color
@@ -85,6 +87,10 @@ section#portfolio
         aside
           opacity: 1
       footer
+        .list-heading
+          font-size: 0.8em
+          text-decoration: line-through
+
         ul.techs
           list-style: none
           margin: 0
@@ -95,14 +101,38 @@ section#portfolio
           li
             margin: 0
             padding-top: 10px
-            img
+            width: 100px
+            .logo
+              display: block
               +size(40px)
+              margin-left: auto
+              margin-right: auto
+              margin-left: 50%
+              transform: translateX(-50%)
+              filter: drop-shadow(3px 3px 2px $accent-color)
+            p
+              width: 100%
+              margin: 0
+              font-size: 1.4rem
+              opacity: 0
+              text-align: center
+              transition: $std-transition
+            &:hover
+              p
+                text-shadow: 2px 2px 6px $accent-color
+                opacity: 1
+
+
 
 
 @media (max-width: $desktop)
-  section#portfolio .row article .img-wrapper
-    aside
+  section#portfolio .row article
+    .img-wrapper
+      aside
+        opacity: 1
+    footer ul.techs li p
       opacity: 1
+      text-shadow: 2px 2px 6px
 
 @media (max-width: $phablet)
   section#portfolio .row
@@ -127,7 +157,7 @@ section#portfolio
         ul.techs
           padding-top: 20px
           li
-            img
+            .logo
               +size(30px)
 
 @media (max-height: $phablet) and (orientation: landscape)
@@ -152,5 +182,5 @@ section#portfolio
         ul.techs
           font-size: 16px
           li
-            img
+            .logo
               +size(30px)
