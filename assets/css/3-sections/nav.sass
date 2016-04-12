@@ -21,8 +21,21 @@ nav
     flex-grow: 1
     span
       font-weight: 700
+    &:before, &:after
+      display: inline-block
+      transition: transform .3s ease
+    &:before
+      content: "<"
+      margin-right: 5px
+    &:after
+      margin-left: 5px
+      content: "/>"
     &:hover
       text-shadow: 4px 4px 4px $text-color
+      &:before
+        transform: translateX(-10px)
+      &:after
+        transform: translateX(10px)
   .anchors
     flex-grow: 1
     transform: translateX(2000px)

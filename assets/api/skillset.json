@@ -2,7 +2,7 @@
 	"aquired":
 		["HTML 5" , "CSS 3" , "Responsive Web Design" , "Java Script" , "jQuery" , "Angular JS" , "GitHub" , "Photoshop"],
 	"current":
-		["Karma" , "Protractor" , "Node" , "PHP" , "SQL" , "Angular 2"],
+		["Karma" , "Protractor", "MongoDB" , "Node" , "PHP" , "SQL" , "Angular 2"],
 	"future":
-		["Webpack" , "React" , "Mocha" , "Jasmine", "..."]
+		["Express", "Webpack" , "React" , "Flux", "Mocha" , "Jasmine" ]
 }]

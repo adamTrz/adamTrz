@@ -17,5 +17,5 @@ footer.slideInUp.slideInUp4
   ul.techs
     li(ng-repeat='tech in image.techs')
       //- img(ng-src="./assets/img/icons/{{tech}}.svg", alt="{{tech}}", title="{{tech}}")
-      img.logo(ng-src="/assets/img/icons/{{tech}}",alt="{{tech | noDots}}", title="{{tech | noDots}}", ng-class="tech")
+      img.logo(ng-src="./assets/img/icons/{{tech}}",alt="{{tech | noDots}}", title="{{tech | noDots}}", ng-class="tech")
       p {{tech | noDots}}
