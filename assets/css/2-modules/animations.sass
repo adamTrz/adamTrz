@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // .view-animation
 .view-animation.ng-enter
 	+position(absolute, 0 0 0 0)
@@ -9,22 +10,34 @@
 	animation: slideOutLeft 1s both ease
 	z-index: 9999 !important
 	overflow-y: hidden
+=======
+.view-animation
+.ng-enter
+	// +position(absolute, 0 0 0 0)
+	animation: incoming 1s both ease
+	transform-origin: right
+	z-index: 8888 !important
+	overflow: hidden
+.ng-leave
+	+position(absolute, 0 0 0 0)
+	transform-origin: left
+	animation: outgoing 1s both ease
+	z-index: 9999 !important
+	overflow: hidden
+>>>>>>> gh-pages
 
-@keyframes slideInRight
+@keyframes incoming
 	0%
 		opacity: 0
-		transform: translateX(100%)
+		transform: scaleX(0)
 	80%
 		opacity: 1
+		transform: scaleX(100%)
   100%
-		transform: translateX(0)
-@keyframes slideOutLeft
-	from
-		transform: translateX(0)
-		opacity: 1
+@keyframes outgoing
 	to
 		opacity: 0
-		transform: translateX(-100%)
+		transform: scaleX(0)
 
 // SCROLL MAGIC ANIMATIONS
 article
@@ -32,7 +45,11 @@ article
 	.slideInUp
 		visibility: hidden
 		opacity: 0
+<<<<<<< HEAD
 		transform: translate3d(0,50px,0)
+=======
+		transform: translate3d(0,100px,0)
+>>>>>>> gh-pages
 		transition: all .7s cubic-bezier(.17, .67, .83, .67)
 	&.is-active
 		.slideInUp

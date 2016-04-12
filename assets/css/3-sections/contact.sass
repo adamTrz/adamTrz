@@ -1,21 +1,18 @@
 section#contact
   article
     padding-top: 100px
+    padding-bottom: 50px
     header
-      text:
-        align: center
-        transform: uppercase
-      font:
-        size: 1.4em
-        weight: 300
-      padding-bottom: 20px
+      @extend %header_txt
     form
-      width: 100%
-      display: inline-flex
+      display: flex
       flex-flow: row wrap
       .form-previev
+        padding-top: 20px
         blockquote
           margin: 0
+          header.preview
+            display: none
           div[class^='preview-']
             margin: 2em 0
             padding: 0
@@ -35,6 +32,7 @@ section#contact
               text-align: center
               font-weight: 300
       .form
+        padding-top: 20px
         .input-group
           position: relative
           label
@@ -78,8 +76,9 @@ section#contact
               opacity: 0
 
         button
-          border-color: $brand-color
-          background-color: $brand-color
+          margin-right: 10px
+          border-color: $secondary-color
+          background-color: $secondary-color
           color: white
           box-shadow: 4px 4px 8px $accent-color
           text-transform: uppercase
@@ -99,6 +98,9 @@ section#contact
   aside
     margin-top: 50px
     text-align: center
+    padding-bottom: 20px
+    header.aside-header
+      margin-bottom: 20px
     span
       margin: 0 40px
       a
@@ -108,9 +110,29 @@ section#contact
           text-shadow: 2px 2px 2px $accent-color
           &:hover
             text-shadow: 4px 4px 4px $accent-color
-@media (max-width: 550px)
-  form
-    .form-previev
-      order: 2
-    .form
-      order: 1
+
+@media (max-width: $desktop)
+  section#contact article
+    form
+      .form-previev.six.columns
+        order: 2
+        width: 100%
+        blockquote
+          header.preview
+            display: block
+          div[class^='preview-']
+            margin: 0.5em 0
+          .preview-txt
+            height: 6em
+      .form.six.columns
+        order: 1
+        width: 100%
+//
+@media (max-width: $mobile)
+  section#contact aside
+    header.aside-header
+      margin: 0
+    span
+      margin: 0 20px
+      a i.fa
+        font-size: 1em

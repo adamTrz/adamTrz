@@ -1,9 +1,16 @@
 nav(ng-class = '{slideAnchors: nav.showMenu}')
-	#logo adam
+	#logo(ui-sref="about") adam
 		span Trz
+<<<<<<< HEAD
 	a(ui-sref="portfolio", ng-click='nav.setActive(1)', ui-sref-active='active') portfolio
 	a(ui-sref="about", ng-click='nav.setActive(2)', ui-sref-active='active') about
 	a(ui-sref="contact", ng-click='nav.setActive(3)', ui-sref-active='active') contact
+=======
+	.anchors
+		a(ui-sref="portfolio", ng-click='nav.setActive(1)', ui-sref-active='active') portfolio
+		a(ui-sref="about", ng-click='nav.setActive(2)', ui-sref-active='active') about
+		a(ui-sref="contact", ng-click='nav.setActive(3)', ui-sref-active='active') contact
+>>>>>>> gh-pages
 	.sub-nav(ng-click='nav.showAnchors()')
 		#hamburger(ng-class='{active: nav.showMenu}')
 			span

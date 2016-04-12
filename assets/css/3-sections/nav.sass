@@ -15,6 +15,7 @@ nav
   transition-delay: 0 .5s
   #logo
     color: $brand-color
+<<<<<<< HEAD
     font-family: 'Montserrat', sans-serif
     text-shadow: 2px 2px 10px $text-color
     cursor: pointer
@@ -33,47 +34,95 @@ nav
     opacity: 0.75
     transition: $std-transition
     transition: transform 1s ease
-    &:before, &:after
-      content: ' / '
-      display: inline-block
-      opacity: 0
-      transform: translateX(0px)
-      transition: transform 0.5s cubic-bezier(0.7,-0.89, 0.32, 1.89)
-    &:before
-      margin-right: 0
-    &:after
-      margin-left: 0
-    &:hover
-      opacity: 1
-      &:before, &:after
-        opacity: 1
-      &:before
-        transform: translateX(-20px)
-      &:after
-        transform: translateX(20px)
-    &.active
-      opacity: 1
-      text-decoration: none
-      &:before, &:after
-        opacity: 1
-      &:before
-        transform: translateX(-20px)
-      &:after
-        transform: translateX(20px)
-  .sub-nav
+=======
+    text-shadow: 2px 2px 10px $text-color
     cursor: pointer
-    width: 40px
+    transition: $std-transition
+    flex-grow: 1
+    span
+      font-weight: 700
+>>>>>>> gh-pages
+    &:before, &:after
+      display: inline-block
+      transition: transform .3s ease
+    &:before
+      content: "<"
+      margin-right: 5px
+    &:after
+      margin-left: 5px
+      content: "/>"
+    &:hover
+      text-shadow: 4px 4px 4px $text-color
+      &:before
+        transform: translateX(-10px)
+      &:after
+        transform: translateX(10px)
+  .anchors
+    flex-grow: 1
+    transform: translateX(2000px)
+    overflow: hidden
+    transition: $std-transition
+    transition: transform 1s ease
+    display: inline-flex
+    justify-content: space-around
+    a
+      color: $bg-color
+      text-transform: uppercase
+      text-decoration: none
+      // min-width: 200px
+      padding: 0 25px
+      opacity: 0.75
+      &:before, &:after
+        content: ' / '
+        display: inline-block
+        opacity: 0
+        transform: translateX(0px)
+        transition: transform 0.5s cubic-bezier(0.7,-0.89, 0.32, 1.89)
+      &:before
+        margin-right: 0
+      &:after
+        margin-left: 0
+      &:hover
+        opacity: 1
+        &:before, &:after
+          opacity: 1
+        &:before
+          transform: translateX(-1em)
+        &:after
+          transform: translateX(1em)
+      &.active
+        opacity: 1
+        text-decoration: none
+        &:before, &:after
+          opacity: 1
+        &:before
+          transform: translateX(-1em)
+        &:after
+          transform: translateX(1em)
+  .sub-nav
+    flex-grow: 1
+    cursor: pointer
+    align-content: flex-end
     #hamburger
       content: ''
       width: 33px
       height: 3px
       position: relative
+<<<<<<< HEAD
       margin-top: 14px
       background-color: $accent-color
       box-shadow: 2px 2px 2px $text-color
       animation-name: navJinx
       animation-duration: 20s
       animation-iteration-count: infinite
+=======
+      margin-top: 16px
+      margin-left: auto
+      margin-right: auto
+      background-color: $brand-color
+      box-shadow: 2px 2px 2px $text-color
+      animation: 10s ease 0s infinite navJinx
+>>>>>>> gh-pages
       transition: $std-transition
       &:before, &:after
         position: absolute
@@ -82,7 +131,11 @@ nav
         display: inline-block
         width: 25px
         height: 3px
+<<<<<<< HEAD
         background-color: $accent-color
+=======
+        background-color: $brand-color
+>>>>>>> gh-pages
         box-shadow: 2px 2px 2px $text-color
         transition: $std-transition
       &:before
@@ -95,10 +148,8 @@ nav
   // NAV HOVER
   .sub-nav:hover
     #hamburger
-      background-color: $primary-color
       box-shadow: 4px 4px 4px $text-color
       &:before, &:after
-        background-color: $primary-color
         box-shadow: 4px 4px 4px $text-color
       &.active
         &:before
@@ -120,23 +171,77 @@ nav.slideAnchors
   background-color: $brand-color
   box-shadow: 2px 2px 10px $accent-color
   #logo
+<<<<<<< HEAD
     color: $secondary-color
+=======
+    color: $bg-color
+  .anchors
+    transform: translateX(0px)
+>>>>>>> gh-pages
   a
-    color: $secondary-color
-    transform: translateX(50px)
+    color: $bg-color
   .sub-nav
     #hamburger
+<<<<<<< HEAD
       background-color: $secondary-color
       animation-iteration-count: 0
       &:before, &:after
         background-color: $secondary-color
+=======
+      background-color: $bg-color
+      animation: 10s ease 0s 0 navJinx
+      &:before, &:after
+        background-color: $bg-color
+
+
+@media (max-width: $desktop)
+  nav
+    background-color: transparentize($bg-color, 0.5)
+@media (max-width: $phablet)
+  nav
+    #logo
+      font-size: .8em
+      flex-grow: 1
+      order: 1
+      text-align: left
+      padding-left: 1em
+    .anchors
+      // padding-top: 1em
+      order: 2
+      flex-grow: 1
+      font-size: .6em
+      line-height: 1em
+      align-items: center
+      a
+        padding: 0 20px
+    .sub-nav
+      transform: scale(.6)
+      order: 3
+      flex-grow: 1
+      #hamburger
+        margin-right: .6em
+        margin-top: 10px
+@media (max-width: $mobile)
+  nav
+    #logo
+      order: 1
+    .anchors
+      padding-top: 1em
+      order: 3
+    .sub-nav
+      order: 2
+
+
+>>>>>>> gh-pages
 
 +keyframes(navJinx)
   0%
-    transform: scaleX(1)
+    transform: scaleY(1)
+    transform: rotateY(0deg)
+  1%
+    transform: scaleY(1.4)
+    transform: rotateY(90deg)
   2%
-    transform: scaleX(1.4)
-  4%
     transform: scaleX(1)
   100%
     transform: scaleX(1)

@@ -1,6 +1,39 @@
-section#about
-  .row
-    article
-      height: 100vh
-      padding-top: 100px
-      header
+section#about.container
+  article.row
+    padding-top: 100px
+    padding-bottom: 50px
+    header.columns.twelve
+      @extend %header_txt
+    .row.blob
+      figure.columns.four
+        margin: 0
+        img.u-max-full-width
+      p.columns.eight
+        font:
+          size: 1.2em
+          weight: 300
+        text-indent: 30px
+        text-align: justify
+        text-decoration: line-through
+
+    .row.skills
+      header.columns.twelve
+      .row
+        .columns.four
+          hgroup
+            margin-bottom: 10px
+          ul
+            list-style: none
+            margin: 0
+            padding: 0
+            padding-left: 20px
+            font-size: 0.8em
+            li
+              i.material-icons
+                font-size: 2rem
+                color: $brand-color
+                vertical-align: text-bottom
+                padding-right: 5px
+              span
+                font-size: 1em
+                font-weight: 300

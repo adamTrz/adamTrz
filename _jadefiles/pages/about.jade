@@ -1,5 +1,28 @@
 section#about.container
-  .row
-    article.columns.twelve
-      header Adam Trzciński
-      p Fascinated with web design, user interface and web animations. Ambitious, focused on realistation of new goals and challenges. Eager to learn new technologies, independent but also aware of importance of team work.
+  article.row
+    header.columns.twelve {{ about.who }}
+    .row.blob
+      figure.columns.four
+        img.u-max-full-width(src="http://fillmurray.com/g/300/300", alt="")
+      p.columns.eight Fascinated with web design, user interface and web animations. Ambitious, focused on realistation of new goals and challenges. Eager to learn new technologies, independent but also aware of importance of team work.
+    .row.skills
+      header.columns.twelve Skill set
+      .row
+        .columns.four
+          hgroup Aquired
+          ul
+            li(ng-repeat='skill in about.skillset[0].aquired')
+              i.material-icons check
+              span {{skill}}
+        .columns.four
+          hgroup Work in progress
+          ul
+            li(ng-repeat='skill in about.skillset[0].current')
+              i.material-icons check_box_outline_blank
+              span {{ skill }}
+        .columns.four
+          hgroup Plans for future
+          ul
+            li(ng-repeat='skill in about.skillset[0].future')
+              i.material-icons check_box_outline_blank
+              span {{ skill }}

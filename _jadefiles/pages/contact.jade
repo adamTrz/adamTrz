@@ -4,6 +4,7 @@ section#contact.container
     form(name='contactForm' ng-submit='contactForm.$valid &&  contact.formSubmit(contact.mail, contactForm)' novalidate, autocomplete="off").row
       .form-previev.six.columns
         blockquote.row
+          header.preview Preview:
           .preview-sender.twelve.columns
             i From:  
             span  {{ contact.mail.sender || 'Name, Surname' }} 
@@ -13,7 +14,7 @@ section#contact.container
           .preview-txt.twelve.columns
             i Message:
             q {{ contact.mail.message || 'Your msg...' }}
-      .six.columns.form
+      .form.six.columns
         .input-group
           input.u-full-width(type="text", ng-model='contact.mail.sender', data-ng-pattern="/^[a-zA-Z ]*$/", name = 'sender', required)#emailSender
           label Name, Surname:
@@ -29,6 +30,7 @@ section#contact.container
           span.error.u-full-width(ng-show="contactForm.msg.$error.minlength && !contactForm.msg.$pristine") Your message is too short.
         button(type='submit' ng-disabled='contactForm.$invalid').u-pull-right Send
     aside
+      header.aside-header Moar about me:
       span(ng-repeat='social in contact.socials')
         a(title='{{social.title}}', ng-href='{{social.url}}', target='_blank')
           i.fa.fa-2x.fa-fw(ng-class='social.icon')

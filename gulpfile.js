@@ -104,7 +104,7 @@ gulp.task('watch', function () {
     gulp.watch('assets/js/functions.js',['jshint','compress']);
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
-    gulp.watch('_jadefiles/pages/*.jade', ['templates']);
+    gulp.watch('_jadefiles/pages/*.jade', ['templates','jekyll-rebuild']);
 });
 
 

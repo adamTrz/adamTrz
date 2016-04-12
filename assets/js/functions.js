@@ -1,5 +1,6 @@
 (function(){
   'use strict'
+<<<<<<< HEAD
   let app =  angular.module('app', ['ngAnimate','ui.router'])
 
   //hack from http://stackoverflow.com/questions/17497006/use-http-inside-custom-provider-in-app-config-angular-js/21536845#21536845
@@ -7,6 +8,18 @@
   let initInjector = angular.injector(['ng']);
   let $http = initInjector.get('$http');
 
+=======
+///////////////////////////
+// APP DECLARATION AND CONFIG:
+///////////////////////////
+
+  let app =  angular.module('app', ['ngAnimate','ui.router'])
+
+  //hack from http://stackoverflow.com/questions/17497006/use-http-inside-custom-provider-in-app-config-angular-js/21536845#21536845
+  // allow to inject $http into configuration resolve function
+  let initInjector = angular.injector(['ng']);
+  let $http = initInjector.get('$http');
+>>>>>>> gh-pages
 
   app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state,  $stateParams) {
     // It's very handy to add references to $state and $stateParams to the $rootScope so that you can access them from any scope within your applications.For example, <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li> to active whenever 'contacts.list' or one of its decendents is active.
@@ -59,7 +72,15 @@
         }
       })
   }])
+  app.filter('noDots', function () {
+    return function(str) {
+      return str.slice(0,str.indexOf('.'))
+    }
+  })
 
+///////////////////////////
+// DIRECTIVES
+///////////////////////////
   app.directive('navigation',function() {
     return {
       restrict:       'E',
@@ -68,13 +89,23 @@
       controllerAs:   'nav'
     }
   })
+<<<<<<< HEAD
 
   let controller = new ScrollMagic.Controller()
+=======
+  app.directive('foot', function() {
+    return {
+      restrict:       'E',
+      templateUrl:    './pages/foot.html'
+    }
+  })
+>>>>>>> gh-pages
   app.directive('portfolioItem', function() {
     return {
       restrict:       'A',
       templateUrl:     './pages/portfolio-item.html',
       link: function(scope, elem, attrs) {
+<<<<<<< HEAD
         console.log(elem[0]);
         var scene = new ScrollMagic.Scene({
             triggerElement: elem[0],
@@ -89,6 +120,34 @@
 
   app.controller('aboutCtrl',function(){
   })
+=======
+        var scene = new ScrollMagic.Scene({
+            triggerElement: elem[0],
+            offset: -200
+        })
+      .setClassToggle(elem[0], 'is-active')
+      .addTo(controller);
+      }
+    }
+  })
+///////////////////////////
+// CONTROLLERS:
+///////////////////////////
+  let controller = new ScrollMagic.Controller()
+
+  app.controller('aboutCtrl',['$http', function($http){
+    let vm = this
+    vm.who = "Adam Trzciński"
+    vm.skillset = {}
+    $http.get('./assets/api/skillset.json').then(function(resp) {
+      console.log(resp);
+      vm.skillset = resp.data
+    })
+
+    console.log(this.skillset)
+
+  }])
+>>>>>>> gh-pages
 
   app.controller('navCtrl', function(){
     this.showMenu = 1
@@ -108,6 +167,10 @@
       })
       return classObj[0].icon
     })
+<<<<<<< HEAD
+=======
+
+>>>>>>> gh-pages
   }])
   app.controller('contactCtrl', ['socialLinks', function(socialLinks){
     this.mail = {}
@@ -120,10 +183,13 @@
     }
     )
   }])
+<<<<<<< HEAD
 
+=======
+>>>>>>> gh-pages
 
-//////////////////////////////////////////////////
 })()
+<<<<<<< HEAD
 
 $(function(){
 
@@ -150,3 +216,5 @@ $(function(){
   //     .addTo(controller);
   // });
 });
+=======
+>>>>>>> gh-pages
