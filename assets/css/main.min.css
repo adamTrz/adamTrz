@@ -476,27 +476,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%; }
 
-<<<<<<< HEAD
-.view-animation.ng-enter {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  -webkit-animation: slideInRight 1s both ease;
-          animation: slideInRight 1s both ease;
-  z-index: 8888 !important;
-  overflow-y: hidden; }
-
-.view-animation.ng-leave {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  -webkit-animation: slideOutLeft 1s both ease;
-          animation: slideOutLeft 1s both ease;
-  z-index: 9999 !important;
-  overflow-y: hidden; }
-=======
 section#about.container article.row header.columns.twelve, section#contact article header {
   text-align: center;
   text-transform: uppercase;
@@ -524,7 +503,6 @@ section#about.container article.row header.columns.twelve, section#contact artic
           animation: outgoing 1s both ease;
   z-index: 9999 !important;
   overflow: hidden; }
->>>>>>> gh-pages
 
 @-webkit-keyframes incoming {
   0% {
@@ -589,30 +567,6 @@ body {
   body #view {
     min-height: 100vh; }
 
-article {
-  overflow-y: hidden; }
-  article .slideInUp {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transform: translate3d(0, 50px, 0);
-            transform: translate3d(0, 50px, 0);
-    -webkit-transition: all 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-            transition: all 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
-  article.is-active .slideInUp {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-  article.is-active .slideInUp.slideInUp2 {
-    -webkit-transition-delay: .3s;
-            transition-delay: .3s; }
-  article.is-active .slideInUp.slideInUp3 {
-    -webkit-transition-delay: .5s;
-            transition-delay: .5s; }
-  article.is-active .slideInUp.slideInUp4 {
-    -webkit-transition-delay: .7s;
-            transition-delay: .7s; }
-
 nav {
   display: -webkit-box;
   display: -webkit-flex;
@@ -641,14 +595,6 @@ nav {
   -webkit-transition-delay: 0 .5s;
           transition-delay: 0 .5s; }
   nav #logo {
-<<<<<<< HEAD
-    color: #366399;
-    font-family: 'Montserrat', sans-serif;
-    text-shadow: 2px 2px 10px #212121;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease; }
-=======
     color: #325361;
     text-shadow: 2px 2px 10px #212121;
     cursor: pointer;
@@ -658,27 +604,10 @@ nav {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1; }
->>>>>>> gh-pages
     nav #logo span {
       font-weight: 700; }
-    nav #logo:before, nav #logo:after {
-      display: inline-block;
-      -webkit-transition: -webkit-transform .3s ease;
-              transition: transform .3s ease; }
-    nav #logo:before {
-      content: "<";
-      margin-right: 5px; }
-    nav #logo:after {
-      margin-left: 5px;
-      content: "/>"; }
     nav #logo:hover {
       text-shadow: 4px 4px 4px #212121; }
-      nav #logo:hover:before {
-        -webkit-transform: translateX(-10px);
-                transform: translateX(-10px); }
-      nav #logo:hover:after {
-        -webkit-transform: translateX(10px);
-                transform: translateX(10px); }
   nav .anchors {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -687,11 +616,6 @@ nav {
     -webkit-transform: translateX(2000px);
             transform: translateX(2000px);
     overflow: hidden;
-<<<<<<< HEAD
-    min-width: 200px;
-    opacity: 0.75;
-=======
->>>>>>> gh-pages
     -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease;
     -webkit-transition: -webkit-transform 1s ease;
@@ -756,17 +680,6 @@ nav {
       width: 33px;
       height: 3px;
       position: relative;
-<<<<<<< HEAD
-      margin-top: 14px;
-      background-color: #616161;
-      box-shadow: 2px 2px 2px #212121;
-      -webkit-animation-name: navJinx;
-              animation-name: navJinx;
-      -webkit-animation-duration: 20s;
-              animation-duration: 20s;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-=======
       margin-top: 16px;
       margin-left: auto;
       margin-right: auto;
@@ -774,7 +687,6 @@ nav {
       box-shadow: 2px 2px 2px #212121;
       -webkit-animation: 10s ease 0s infinite navJinx;
               animation: 10s ease 0s infinite navJinx;
->>>>>>> gh-pages
       -webkit-transition: all 0.3s ease;
               transition: all 0.3s ease; }
       nav .sub-nav #hamburger:before, nav .sub-nav #hamburger:after {
@@ -784,11 +696,7 @@ nav {
         display: inline-block;
         width: 25px;
         height: 3px;
-<<<<<<< HEAD
-        background-color: #616161;
-=======
         background-color: #325361;
->>>>>>> gh-pages
         box-shadow: 2px 2px 2px #212121;
         -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease; }
@@ -820,22 +728,6 @@ nav {
       box-shadow: 0px 2px 2px #212121; }
 
 nav.slideAnchors {
-<<<<<<< HEAD
-  background-color: #366399;
-  box-shadow: 2px 2px 10px #616161; }
-  nav.slideAnchors #logo {
-    color: #F5F5F5; }
-  nav.slideAnchors a {
-    color: #F5F5F5;
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px); }
-  nav.slideAnchors .sub-nav #hamburger {
-    background-color: #F5F5F5;
-    -webkit-animation-iteration-count: 0;
-            animation-iteration-count: 0; }
-    nav.slideAnchors .sub-nav #hamburger:before, nav.slideAnchors .sub-nav #hamburger:after {
-      background-color: #F5F5F5; }
-=======
   background-color: #325361;
   box-shadow: 2px 2px 10px #616161; }
   nav.slideAnchors #logo {
@@ -918,7 +810,6 @@ nav.slideAnchors {
     -webkit-order: 2;
         -ms-flex-order: 2;
             order: 2; } }
->>>>>>> gh-pages
 
 @-webkit-keyframes navJinx {
   0% {
@@ -969,14 +860,6 @@ section#portfolio .row article {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-<<<<<<< HEAD
-  padding-top: 100px; }
-  section#portfolio .row article header {
-    text-align: center;
-    font-size: 2em;
-    font-weight: 300; }
-  section#portfolio .row article ul.tasks {
-=======
   padding-bottom: 50px; }
   section#portfolio .row article:first-child {
     padding-top: 100px; }
@@ -998,7 +881,6 @@ section#portfolio .row article .tasks.slideInUp.slideInUp2 {
             text-decoration-color: #325361;
     padding-bottom: 10px; }
   section#portfolio .row article .tasks.slideInUp.slideInUp2 ul {
->>>>>>> gh-pages
     margin: 0;
     list-style: none;
     display: -webkit-box;
@@ -1012,55 +894,19 @@ section#portfolio .row article .tasks.slideInUp.slideInUp2 {
         -ms-flex-pack: distribute;
             justify-content: space-around;
     font-size: 22px; }
-<<<<<<< HEAD
-    section#portfolio .row article ul.tasks li {
-=======
     section#portfolio .row article .tasks.slideInUp.slideInUp2 ul li {
->>>>>>> gh-pages
       margin: 0;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
-<<<<<<< HEAD
-      section#portfolio .row article ul.tasks li i {
-        padding-right: 10px;
-        color: #366399;
-=======
       section#portfolio .row article .tasks.slideInUp.slideInUp2 ul li i {
         padding-right: 10px;
         color: #325361;
->>>>>>> gh-pages
         text-shadow: 2px 2px 4px #616161; }
       section#portfolio .row article .tasks.slideInUp.slideInUp2 ul li span {
         margin: 0;
         text-transform: uppercase; }
-<<<<<<< HEAD
-  section#portfolio .row article .img-wrapper {
-    background-color: white;
-    height: 50%;
-    margin: 0 1%;
-    overflow: hidden;
-    box-shadow: 2px 2px 4px #616161;
-    position: relative; }
-    section#portfolio .row article .img-wrapper:hover {
-      -webkit-transition-delay: 0s;
-              transition-delay: 0s; }
-      section#portfolio .row article .img-wrapper:hover:after {
-        opacity: 0; }
-    section#portfolio .row article .img-wrapper:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(54, 99, 153, 0.1);
-      opacity: 1;
-      -webkit-transition: all .5s ease;
-              transition: all .5s ease; }
-    section#portfolio .row article .img-wrapper img {
-=======
 
 section#portfolio .row article .img-wrapper {
   background-color: white;
@@ -1141,7 +987,6 @@ section#portfolio .row article footer ul.techs {
     padding-top: 10px;
     width: 100px; }
     section#portfolio .row article footer ul.techs li .logo {
->>>>>>> gh-pages
       display: block;
       height: 40px;
       width: 40px;
@@ -1157,21 +1002,6 @@ section#portfolio .row article footer ul.techs {
       margin: 0;
       font-size: 1.4rem;
       opacity: 0;
-<<<<<<< HEAD
-      -webkit-transition: all 0.3s ease;
-              transition: all 0.3s ease; }
-      section#portfolio .row article .img-wrapper aside a {
-        padding: 5px 10px;
-        color: #366399; }
-        section#portfolio .row article .img-wrapper aside a i.fa {
-          font-size: 1.2em;
-          text-shadow: 2px 2px 2px #616161;
-          -webkit-transition: all 0.3s ease;
-                  transition: all 0.3s ease; }
-          section#portfolio .row article .img-wrapper aside a i.fa:hover {
-            text-shadow: 4px 4px 6px #616161; }
-  section#portfolio .row article .img-wrapper:hover aside {
-=======
       text-align: center;
       -webkit-transition: all 0.3s ease;
               transition: all 0.3s ease; }
@@ -1181,7 +1011,6 @@ section#portfolio .row article footer ul.techs {
 
 @media (max-width: 1000px) {
   section#portfolio .row article .img-wrapper aside {
->>>>>>> gh-pages
     opacity: 1; }
   section#portfolio .row article footer ul.techs li p {
     opacity: 1;
@@ -1272,50 +1101,6 @@ section#contact article {
     -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap; }
-<<<<<<< HEAD
-    section#contact article form .form-previev blockquote {
-      margin: 0; }
-      section#contact article form .form-previev blockquote div[class^='preview-'] {
-        margin: 2em 0;
-        padding: 0;
-        font-size: 0.8em; }
-      section#contact article form .form-previev blockquote span {
-        padding-left: 10px;
-        font-weight: 300;
-        display: inline-block;
-        max-width: 80%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        word-wrap: normal;
-        margin-top: 5px; }
-      section#contact article form .form-previev blockquote i {
-        color: #366399;
-        display: inline-block;
-        max-width: 80%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        word-wrap: normal; }
-      section#contact article form .form-previev blockquote .preview-txt q {
-        display: block;
-        text-align: center;
-        font-weight: 300; }
-    section#contact article form .form .input-group {
-      position: relative; }
-      section#contact article form .form .input-group label {
-        position: absolute;
-        top: 1.4em;
-        right: 0.2em;
-        bottom: 1.4em;
-        left: 0.2em;
-        pointer-events: none;
-        font-weight: 300;
-        font-size: 0.8em;
-        -webkit-transition: all 0.3s ease;
-                transition: all 0.3s ease; }
-      section#contact article form .form .input-group input:focus ~ label, section#contact article form .form .input-group input:not(.ng-empty) ~ label, section#contact article form .form .input-group textarea:focus ~ label, section#contact article form .form .input-group textarea:not(.ng-empty) ~ label {
-=======
     section#contact article form .form-previev {
       padding-top: 20px; }
       section#contact article form .form-previev blockquote {
@@ -1406,7 +1191,6 @@ section#contact article {
         box-shadow: 4px 4px 8px #616161;
         text-transform: uppercase;
         font-weight: 600;
->>>>>>> gh-pages
         font-size: 0.6em;
         -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease; }
@@ -1416,57 +1200,8 @@ section#contact article {
         border-color: #b0b0b0;
         background-color: silver;
         background-color: #F5F5F5;
-<<<<<<< HEAD
-        margin: 2em 0;
-        padding: 0;
-        padding-left: .2em;
-        font-weight: 300;
-        font-size: .8em;
-        color: #212121;
-        border: none;
-        border-radius: 0;
-        border-bottom: solid 1px #366399;
-        -webkit-transition: all 0.3s ease;
-                transition: all 0.3s ease; }
-        section#contact article form .form .input-group input:focus, section#contact article form .form .input-group textarea:focus {
-          border-bottom: 2px solid #366399; }
-      section#contact article form .form .input-group textarea {
-        resize: none;
-        overflow: visible;
-        height: auto; }
-      section#contact article form .form .input-group .error {
-        position: absolute;
-        bottom: 1em;
-        left: 0;
-        padding-left: .2em;
-        font-size: 0.6em;
-        color: red;
-        -webkit-transition: all 0.3s ease;
-                transition: all 0.3s ease; }
-        section#contact article form .form .input-group .error.ng-hide {
-          opacity: 0; }
-    section#contact article form .form button {
-      border-color: #366399;
-      background-color: #366399;
-      color: white;
-      box-shadow: 4px 4px 8px #616161;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 0.6em;
-      -webkit-transition: all 0.3s ease;
-              transition: all 0.3s ease; }
-    section#contact article form .form button[disabled=disabled] {
-      color: #F5F5F5;
-      color: #616161;
-      border-color: #b0b0b0;
-      background-color: silver;
-      background-color: #F5F5F5;
-      box-shadow: 0px 0px 0px #F5F5F5;
-      box-shadow: 1px 1px 4px #616161; }
-=======
         box-shadow: 0px 0px 0px #F5F5F5;
         box-shadow: 1px 1px 4px #616161; }
->>>>>>> gh-pages
 
 section#contact aside {
   margin-top: 50px;
