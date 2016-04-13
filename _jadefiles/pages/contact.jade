@@ -1,6 +1,6 @@
 section#contact.container
   article
-    header Lets talk smack
+    header Send me a message
     form(name='contactForm' ng-submit='contactForm.$valid &&  contact.formSubmit(contact.mail, contactForm)' novalidate, autocomplete="off").row
       .form-previev.six.columns
         blockquote.row
@@ -30,7 +30,7 @@ section#contact.container
           span.error.u-full-width(ng-show="contactForm.msg.$error.minlength && !contactForm.msg.$pristine") Your message is too short.
         button(type='submit' ng-disabled='contactForm.$invalid').u-pull-right Send
     aside
-      header.aside-header Moar about me:
+      header.aside-header Learn more about me:
       span(ng-repeat='social in contact.socials')
         a(title='{{social.title}}', ng-href='{{social.url}}', target='_blank')
           i.fa.fa-2x.fa-fw(ng-class='social.icon')

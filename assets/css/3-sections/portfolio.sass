@@ -13,10 +13,7 @@ section#portfolio
           height: 60%
     article
       header
-        text-align: center
-        font-size: 2em
-        font-weight: 300
-        padding: 10px 0
+        @extend %header_txt
       .tasks.slideInUp.slideInUp2
         padding: 10px 0
         .list-heading
@@ -89,7 +86,7 @@ section#portfolio
       footer
         .list-heading
           font-size: 0.8em
-          text-decoration: line-through
+          // text-decoration: line-through
 
         ul.techs
           list-style: none

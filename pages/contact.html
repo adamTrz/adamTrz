@@ -1,7 +1,7 @@
 
 <section id="contact" class="container">
   <article>
-    <header>Lets talk smack</header>
+    <header>Send me a message</header>
     <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" class="row">
       <div class="form-previev six columns">
         <blockquote class="row">
@@ -30,7 +30,7 @@
       </div>
     </form>
     <aside>
-      <header class="aside-header">Moar about me:</header><span ng-repeat="social in contact.socials"><a title="{{social.title}}" ng-href="{{social.url}}" target="_blank"><i ng-class="social.icon" class="fa fa-2x fa-fw"></i></a></span>
+      <header class="aside-header">Learn more about me:</header><span ng-repeat="social in contact.socials"><a title="{{social.title}}" ng-href="{{social.url}}" target="_blank"><i ng-class="social.icon" class="fa fa-2x fa-fw"></i></a></span>
     </aside>
   </article>
 </section>

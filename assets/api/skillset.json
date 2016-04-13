@@ -1,8 +1,8 @@
 [{
 	"aquired":
-		["HTML 5" , "CSS 3" , "Responsive Web Design" , "Java Script" , "jQuery" , "Angular JS" , "GitHub" , "Photoshop"],
+		["HTML 5" , "CSS 3" , "Responsive Web Design" , "Java Script" , "jQuery" , "Angular JS" , "Task Automation (Gulp)" , "GitHub" , "Photoshop"],
 	"current":
-		["Karma" , "Protractor", "MongoDB" , "Node" , "PHP" , "SQL" , "Angular 2"],
+		["Karma" , "Protractor", "MongoDB" , "Node" , "PHP" , "SQL" , "React"],
 	"future":
-		["Express", "Webpack" , "React" , "Flux", "Mocha" , "Jasmine" ]
+		["Express", "Webpack" , "Angular 2" , "Flux", "Mocha" , "Jasmine" ]
 }]
