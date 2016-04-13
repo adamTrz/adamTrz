@@ -1,5 +1,5 @@
 [
-  { "url":      "http://fillmurray.com/g/600/300",
+  { "url":      "./assets/img/portfolio.png",
     "title":    "Portfolio - adamTrz.",
     "tasks":     ["design", "layout", "code","animations"],
     "techs":     ["Angular.svg","Sass.svg","Jade.svg","Skeleton.svg", "ScrollMagic.png"],
