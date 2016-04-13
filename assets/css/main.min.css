@@ -1075,12 +1075,11 @@ section#about.container article.row {
   padding-bottom: 50px; }
   section#about.container article.row .row.blob figure.columns.four {
     margin: 0; }
-  section#about.container article.row .row.blob p.columns.eight {
+  section#about.container article.row .row.blob .columns.eight p {
     font-size: 1.2em;
     font-weight: 300;
     text-indent: 2em;
-    text-align: justify;
-    text-decoration: line-through; }
+    text-align: justify; }
   section#about.container article.row .row.skills {
     padding-bottom: 2em; }
     section#about.container article.row .row.skills header.columns.twelve {
