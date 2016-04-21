@@ -3,7 +3,7 @@
   <article>
     <header>Send me a message</header>
     <div ng-show="contact.mailSent" class="tyvm">Thanks! I will responod to your message asap.</div>
-    <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" class="row">
+    <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" action="https://formspree.io/trzcinski.adam@gmail.com" method="POST" class="row">
       <div class="form-previev six columns">
         <blockquote class="row">
           <header class="preview">Preview:</header>

@@ -2,8 +2,7 @@ section#contact.container
   article
     header Send me a message
     .tyvm(ng-show='contact.mailSent') Thanks! I will responod to your message asap.
-    form(name='contactForm' ng-submit='contactForm.$valid &&  contact.formSubmit(contact.mail, contactForm)' novalidate, autocomplete="off").row
-      //- form(name='contactForm' ng-submit='contactForm.$valid &&  contact.formSubmit(contact.mail, contactForm)' novalidate, autocomplete="off" action='https://formspree.io/trzcinski.adam@gmail.com' method="POST").row
+    form(name='contactForm' ng-submit='contactForm.$valid &&  contact.formSubmit(contact.mail, contactForm)' novalidate, autocomplete="off" action='https://formspree.io/trzcinski.adam@gmail.com' method="POST").row
       .form-previev.six.columns
         blockquote.row
           header.preview Preview:
