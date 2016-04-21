@@ -5,8 +5,9 @@
 		.controller('aboutCtrl',['$http', function($http){
 	    this.who = "Adam Trzciński"
 	    this.skillset = {}
-	    $http.get('./assets/api/skillset.json').then((resp) => {
-	      this.skillset = resp.data
+	    $http.get('./assets/api/skillset.json')
+				.then((resp) => {
+	      	this.skillset = resp.data
 	    })
 	  }])
 
@@ -29,13 +30,13 @@
 	  }])
 
 		.controller('contactCtrl', ['socialLinks', function(socialLinks){
+			this.mailSent = false
 	    this.mail = {}
 	    this.socials = socialLinks
 	    this.formSubmit = ((mail,form) => {
-	      console.log('thanks');
 	      this.mail = {}
 	      form.$setPristine()
-	      console.log(form);
+				this.mailSent = true
 	    })
 	  }])
 

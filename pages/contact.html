@@ -2,6 +2,7 @@
 <section id="contact" class="container">
   <article>
     <header>Send me a message</header>
+    <div ng-show="contact.mailSent" class="tyvm">Thanks! I will responod to your message asap.</div>
     <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" class="row">
       <div class="form-previev six columns">
         <blockquote class="row">

@@ -4,6 +4,13 @@ section#contact
     padding-bottom: 50px
     header
       @extend %header_txt
+    .tyvm
+      text-align: center
+      color: $brand-color
+      transition: all 2s ease
+      opacity: 1
+      &.ng-hide
+        opacity: 0
     form
       display: flex
       flex-flow: row wrap
