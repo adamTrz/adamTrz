@@ -11,7 +11,7 @@ section#about.container
       .columns.eight
         p
           font:
-            size: 1.2em
+            size: 1em
             weight: 300
           text-indent: 2em
           text-align: justify
@@ -42,3 +42,26 @@ section#about.container
               span
                 font-size: 1em
                 font-weight: 300
+
+@media (max-width: $mobile)
+  section#about.container
+    article.row
+      header.columns.twelve
+      .row.blob
+        .columns.eight
+          padding-top: 20px
+
+      .row.skills
+        header.columns.twelve
+        .row
+          .columns.four
+            hgroup
+              margin-top: 1em
+              margin-bottom: .6em
+            ul
+              // padding-left: 20%
+              display: flex
+              flex-flow: row wrap
+              justify-content: space-between
+              li
+                width: 50%

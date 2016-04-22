@@ -6,14 +6,20 @@ section#portfolio
       display: flex
       flex-flow: column nowrap
       justify-content: space-around
-      padding-bottom: 50px
       &:first-child
         padding-top: 100px
         .img-wrapper
           height: 60%
+      &:last-child
+        padding-bottom: 50px
     article
       header
         @extend %header_txt
+        &:before
+          content: '# '
+          font:
+            weight: 400
+            size: 1.2em
       .tasks.slideInUp.slideInUp2
         padding: 10px 0
         .list-heading
@@ -125,11 +131,14 @@ section#portfolio
 @media (max-width: $desktop)
   section#portfolio .row article
     .img-wrapper
+      // height: 75%
       aside
         opacity: 1
-    footer ul.techs li p
-      opacity: 1
-      text-shadow: 2px 2px 6px
+    footer
+      padding-top: 1em
+      ul.techs li p
+        opacity: 1
+        text-shadow: 2px 2px 6px
 
 @media (max-width: $phablet)
   section#portfolio .row
@@ -149,13 +158,22 @@ section#portfolio
           li
             padding-top: 5px
       .img-wrapper
+
       .aside
       footer
+        .list-heading
+          font-size: 0.6em
         ul.techs
-          padding-top: 20px
+          // padding-top: 20px
           li
+            width: 25%
             .logo
               +size(30px)
+
+@media (max-width: $mobile)
+  section#portfolio .row
+    article
+      .img-wrapper
 
 @media (max-height: $phablet) and (orientation: landscape)
   section#portfolio .row
