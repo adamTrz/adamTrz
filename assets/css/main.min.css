@@ -580,7 +580,6 @@ nav {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-bottom: 30px;
   overflow-x: hidden;
   position: fixed;
   top: 0;
@@ -876,7 +875,7 @@ section#portfolio .row article {
       -ms-flex-pack: distribute;
           justify-content: space-around; }
   section#portfolio .row article:first-child {
-    padding-top: 100px; }
+    padding-top: 5%; }
     section#portfolio .row article:first-child .img-wrapper {
       height: 60%; }
   section#portfolio .row article:last-child {
@@ -1058,6 +1057,15 @@ section#portfolio .row article footer ul.techs {
     section#portfolio .row article footer ul.techs li .logo {
       height: 30px;
       width: 30px; } }
+
+@media (max-width: 550px) {
+  section#portfolio .row article .tasks.slideInUp.slideInUp2 {
+    padding: 0; }
+  section#portfolio .row article header {
+    padding-bottom: 0;
+    padding-top: 50px; }
+  section#portfolio .row article {
+    height: 110vh; } }
 
 @media (max-height: 600px) and (orientation: landscape) {
   section#portfolio .row article:first-child {
