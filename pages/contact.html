@@ -2,8 +2,9 @@
 <section id="contact" class="container">
   <article>
     <header>Send me a message</header>
-    <div ng-show="contact.mailSent" class="tyvm">Thanks! I will responod to your message asap.</div>
-    <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" action="https://formspree.io/trzcinski.adam@gmail.com" method="POST" class="row">
+    <div ng-show="contact.mailSent" class="tyvm">Thanks! I will responod asap.</div>
+    <div ng-show="contact.sendError" class="tyvm">Lol, error occured :(</div>
+    <form name="contactForm" ng-submit="contactForm.$valid &amp;&amp;  contact.formSubmit(contact.mail, contactForm)" novalidate="novalidate" autocomplete="off" class="row">
       <div class="form-previev six columns">
         <blockquote class="row">
           <header class="preview">Preview:</header>
@@ -16,11 +17,11 @@
       </div>
       <div class="form six columns">
         <div class="input-group">
-          <input type="text" ng-model="contact.mail.sender" data-ng-pattern="/^[a-zA-Z ]*$/" name="sender" required="required" id="emailSender" class="u-full-width"/>
-          <label>Name, Surname:</label><span ng-show="contactForm.sender.$invalid  &amp;&amp; !contactForm.sender.$pristine" class="error u-full-width">No digits or special characters allowed.</span>
+          <input type="text" ng-model="contact.mail.sender" name="sender" required="required" id="emailSender" class="u-full-width"/>
+          <label>Name, Surname:</label><span ng-show="contactForm.sender.$invalid  &amp;&amp; !contactForm.sender.$pristine" class="error u-full-width">Please submit your name.</span>
         </div>
         <div class="input-group"> 
-          <input type="email" ng-model="contact.mail.email" name="email" required="required" id="emailInput" class="u-full-width"/><span ng-show="contactForm.email.$invalid  &amp;&amp; !contactForm.email.$pristine" class="error u-full-width">Please enter valid email.</span>
+          <input type="email" ng-model="contact.mail._replyto" name="_replyto" required="required" id="emailInput" class="u-full-width"/><span ng-show="contactForm._replyto.$invalid  &amp;&amp; !contactForm._replyto.$pristine" class="error u-full-width">Please enter valid email.</span>
           <label>Email:</label>
         </div>
         <div class="input-group"> 

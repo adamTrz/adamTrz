@@ -29,15 +29,27 @@
 	    })
 	  }])
 
-		.controller('contactCtrl', ['socialLinks', function(socialLinks){
+		.controller('contactCtrl', ['socialLinks','$http', function(socialLinks, $http){
 			this.mailSent = false
+			this.sendError = false
 	    this.mail = {}
 	    this.socials = socialLinks
 	    this.formSubmit = ((mail,form) => {
-	      this.mail = {}
+				this.sendForm(mail)
 	      form.$setPristine()
-				this.mailSent = true
 	    })
+			this.sendForm = ((mail) => {
+				$http
+					.post("https://formspree.io/trzcinski.adam@gmail.com", mail)
+					.then(() => {
+	      		this.mail = {}
+						this.mailSent = true
+					})
+					.catch(() => {
+						this.sendError = true
+					})
+			})
+
 	  }])
 
 }());
