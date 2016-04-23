@@ -71,10 +71,17 @@ gulp.task('templates', function(){
   // .pipe(gulp.dest('_site/assets/pages'));
 });
 
+  var jsFiles = [
+      'assets/js/app.js',
+      'assets/js/directives.js',
+      'assets/js/controllers.js',
+      'assets/js/config.js',
+      'assets/js/services.js'
+    ]
 
 // Catch JS errors
 gulp.task('jshint', function() {
-    return gulp.src(['assets/js/app.js','assets/js/directives.js','assets/js/controllers.js'])
+    return gulp.src(jsFiles)
         .pipe(jshint(
           { esversion: 6,
             asi: true}
@@ -84,7 +91,7 @@ gulp.task('jshint', function() {
 
 // Uglify JS
 gulp.task('compress', function() {
-  return gulp.src(['assets/js/app.js','assets/js/directives.js','assets/js/controllers.js'])
+  return gulp.src(jsFiles)
 		.pipe(babel({
 			presets: ['es2015']
 		}))
@@ -101,7 +108,7 @@ gulp.task('compress', function() {
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
     gulp.watch('assets/js/**', ['jekyll-rebuild']);
-    gulp.watch(['assets/js/app.js','assets/js/directives.js','assets/js/controllers.js'],['jshint','compress']);
+    gulp.watch(jsFiles,['jshint','compress']);
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
     gulp.watch('_jadefiles/pages/*.jade', ['templates','jekyll-rebuild']);
