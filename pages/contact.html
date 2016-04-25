@@ -9,7 +9,7 @@
         <blockquote class="row">
           <header class="preview">Preview:</header>
           <div class="preview-sender twelve columns"><i>From:  </i><span> {{ contact.mail.sender || 'Name, Surname' }} </span></div>
-          <div class="preview-subject eight columns pull-right"><i>@ </i><span>{{ contact.mail.email || 'mail@mail.com' }}</span></div>
+          <div class="preview-subject eight columns pull-right"><i>@ </i><span>{{ contact.mail._replyto || 'mail@mail.com' }}</span></div>
           <div class="preview-txt twelve columns"><i>Message:</i>
             <q>{{ contact.mail.message || 'Your msg...' }}</q>
           </div>

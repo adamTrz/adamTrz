@@ -12,7 +12,7 @@ section#contact.container
             span  {{ contact.mail.sender || 'Name, Surname' }} 
           .preview-subject.eight.columns.pull-right
             i @ 
-            span {{ contact.mail.email || 'mail@mail.com' }}
+            span {{ contact.mail._replyto || 'mail@mail.com' }}
           .preview-txt.twelve.columns
             i Message:
             q {{ contact.mail.message || 'Your msg...' }}
